@@ -1,5 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
-		<title> Othello </title>
+		<title> game </title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/jcanvas.min.js"></script>
@@ -283,32 +283,32 @@
 				<td valign="top">
 					<div style="height:540px;font-size:20px;font-family:Arial">
 						<div id="welcome">
-							<span style="font-size:40px;font-family:Arial;color:red">Othello<br></span>
-							<span style="font-size:15px;font-family:Arial;text-align:right;">作者:<a href="http://" target="_blank" rel="external">@古阳</a></span>
+							<span style="font-size:40px;font-family:Arial;color:red">game<br></span>
+							<span style="font-size:15px;font-family:Arial;text-align:right;">author:<a href="http://" target="_blank" rel="external">@keefor</a></span>
 						</div>
 						
 						<hr>
 						
 						<div id="opera">
 						<fieldset>	
-						<legend>颜色</legend>
-						<input type="radio" name="side" value="BLACK" checked> 黑棋<br>
-						<input type="radio" name="side" value="WHITE"> 白棋 <br>
+						<legend>side</legend>
+						<input type="radio" name="side" value="BLACK" checked> black<br>
+						<input type="radio" name="side" value="WHITE"> white <br>
 						</fieldset>
 						<br>
 						
 						<fieldset>
-						<legend>难度</legend>
-						<input type="radio" name="level" value="0"> 傻瓜<br>
-						<input type="radio" name="level" value="1"> 简单<br>
-						<input type="radio" name="level" value="2" checked> 普通<br>
-						<input type="radio" name="level" value="3"> 困难 <br>
+						<legend>difficulty</legend>
+						<input type="radio" name="level" value="0"> idiot<br>
+						<input type="radio" name="level" value="1"> easy<br>
+						<input type="radio" name="level" value="2" checked> normal<br>
+						<input type="radio" name="level" value="3"> hard <br>
 						</fieldset>
 						<br>
 						
-						<input class="button" type="button" onclick="newGame()" value="开始">
+						<input class="button" type="button" onclick="newGame()" value="Start">
 						<br>
-						<input class="button" type="button" onclick="regret()" value="悔棋">
+						<input class="button" type="button" onclick="regret()" value="Regret">
 						</div>
 						<br>
 						<div id="score" style="background:green;width:150px;">
