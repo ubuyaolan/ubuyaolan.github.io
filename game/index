@@ -1,25 +1,24 @@
-
-<html>
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-  <title> game </title> 
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+﻿---
+layout: false
+---
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title> game </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/jcanvas.min.js"></script>
 		<script type="text/javascript" src="./js/board.min.js"></script>
 		<script type="text/javascript" src="./js/ai2.min.js"></script>
-  <style>
+		<style>
 			.button{
-				width:120px;
-				height: 50px;
-				font-size: 25px;
-				font-family:SimHei;
+				width:150px;
+				height: 30px;
+				font-size: 20px;
 				border: 1px solid #b3b3b3;
-				margin-right: 30px;
+				margin-top: 3%;
 				background: #ccc;
 			}
-		</style> 
-  <script>
+		</style>
+		<script>
 			var bd = new Board();
 			var br = new Brain();
 			var CW = 60; //CELL WIDTH
@@ -33,7 +32,6 @@
 				//$('#log').html(msg);
 			}
 			
-			//画单个棋子
 			function drawChess(cx,cy,player){
 				if(player == 0) return;
 				var size = CW*3/4;
@@ -45,9 +43,6 @@
 			}
 			
 			function drawBoard(){
-				resetwin();
-			
-				//画背景
 				$("canvas").drawRect({
 				  fillStyle: "darkgreen",
 				  x:OS, y:OS,
@@ -56,7 +51,7 @@
 				  fromCenter: false
 				});
 				
-				//画网格
+				//draw lines
 				for(var x = 0; x <= BS; ++x){
 					$("canvas").drawLine({
 					  strokeStyle: cellColor,
@@ -73,14 +68,14 @@
 					  x2: BS*CW+OS, y2: y*CW+OS
 					});
 				}
-				//画棋子
+				
 				for(var x = 1; x <= BS; ++x){
 					for(var y = 1; y <= BS; ++y){
 						drawChess(x,y,bd.getChess(x,y));
 					}
 				}
 				
-				//高亮最后操作
+				//highlight the last chess
 				if(lastStep[0]>0 && lastStep[1]>0){
 					$("canvas").drawRect({
 					  fillStyle: "red",
@@ -91,7 +86,7 @@
 					});
 				}
 				
-				//标记玩家可以落子的位置
+				//mark the putable chess
 				if(bd.getPlayer()==humanSide){
 					var steps = bd.getPutableList();
 					if(steps!=null && steps.length>0){
@@ -131,7 +126,6 @@
 			}
 			
 			var lastCX=-1,lastCY=-1;
-			//显示亮框，鼠标划过的地方
 			function highlightCell(cx,cy){
 				if(lastCX==cx && lastCY==cy){
 					return;
@@ -150,28 +144,6 @@
 				if (!window.console){
 					console = {log:function(){},debug:function(){}};
 				}
-				//写字
-				//resetwin();
-				
-				drawBoard();
-			});
-			
-			function resetwin()
-			{
-				var width = $(window).get(0).innerWidth;
-				var height = $(window).get(0).innerHeight;
-				if(width>height)
-				{
-					width = height;
-				}else{
-					height = width;
-				}  
-				if(width>520)
-				width = 520
-				
-				CW = (width-10-OS)/BS;
-				$("canvas").attr("width", width);
-				$("canvas").attr("height", width); 
 				for(var i=1;i<=BS;++i){
 					$("canvas").drawText({
 					  fillStyle: "orange",
@@ -192,7 +164,8 @@
 					
 				}
 				
-			}
+				drawBoard();
+			});
 			
 			function newGame(){
 				var side = $("input[name='side']:checked").val();
@@ -243,7 +216,7 @@
 						lastStep[0]=cx;lastStep[1]=cy;
 						drawBoard();
 						window.setTimeout(turn,100);
-				  	}
+					}
 					else{
 						logMsg("Illegal chess at "+cx+","+cy);
 					}
@@ -251,9 +224,7 @@
 			}
 			
 			function turn(){
-				//移除绑定
 				$("canvas").unbind();
-				//判断游戏是否结束，显示输赢
 				if(bd.isGameOver()){
 					var bw = bd.getChessCount();
 					var winSide = 0;
@@ -276,7 +247,6 @@
 					logMsg("Game Over!");
 					return;
 				}
-				//控制方是否可以落子（该操作已经isGameOver里执行了两次了）
 				if(bd.canPutAnyChess()){
 					if(bd.getPlayer() == humanSide){
 						$("canvas").mousemove(function(event) {
@@ -296,97 +266,69 @@
 					}
 					else if(bd.getPlayer() == computerSide){
 						var step = br.findBestStep(bd);
-						if(step!=null){//上面已经进行了判断，此处基本不可能等于null
+						if(step!=null){
 							putChess(step[0],step[1]);
 						}
 					}
 				}
 				else{
-					//(该操作里又执行了一次canPutAnyChess,起始可以不需要再次判断的)
 					bd.skipPutChess();
 					drawBoard();
 					turn();
 				}
 			}
-		</script> 
-  <style type="text/css">
-#menu {
-font:20px SimHei, verdana, Arial, sans-serif; /* 设置文字大小和字体样式 */
-}
-#menu, #menu li {
-list-style:none; /* 将默认的列表符号去掉 */
-padding:0; /* 将默认的内边距去掉 */
-margin:0; /* 将默认的外边距去掉 */
-}
-</style>
-  <style type="text/css">
-#menu li { 
-float:left; /* 往左浮动 */
+		</script>
+	</head>
 
-}
-</style>
-
-<style>
-input[type='radio']{width:20px;height:20px;}
-#menu { margin-left:30px;}
-</style>
-
- </head>   
- <body style="height: 100%;width: 100%;margin: 0;padding: 0;"> 
-  <div valign="top"> 
-   <div style="width: 100%;font-size:20px;font-family:Arial"> 
-    <div id="welcome"> 
-     <span style="font-size:40px;font-family:SimHei;color:red">黑白棋<br /></span> 
-     <span style="font-size:20px;font-family:Arial;text-align:right;">author:<a href="http://ubuyaolan.github.io/">@keefor</a></span> 
-    </div> 
-    <hr /> 
-    <div> 
-     <canvas id="bdcanvas" style="margin: 0;padding: 0;display: block;"></canvas> 
-    </div> 
-    <ul id="menu"> 
-     <li><input class="button" type="button" onclick="newGame()" value="开始" /></li> 
-     <li><input class="button" type="button" onclick="regret()" value="悔棋" /> </li> 
-    </ul>
-    <table id="opera"> 
-     <tbody> 
-      <tr> 
-       <td>
-        <div id="score" style="background:green;width:150px;margin-left:30px;"> 
-         <table width="100%" style="text-align:center"> 
-          <tbody> 
-           <tr> 
-            <td> <span id="bnumber" style="color:black;font-size:40px">2</span> </td> 
-            <td> <span id="wnumber" style="color:white;font-size:40px">2</span> </td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div></td> 
-      </tr> 
-     </tbody>
-    </table> 
-	 <br /><hr>
-    <ul id="menu"> 
-     <!-- <fieldset>  -->
-      <!-- <legend>side</legend>  -->
-      <li><input type="radio" name="side" value="BLACK" checked="" /> 黑子</li> 
-      <li><input type="radio" name="side" value="WHITE"  /> 白子 </li> 
-     <!-- </fieldset>  -->
-     <!--   -->
-    </ul> <br /><hr>
-    <ul id="menu" > 
-     <!-- <fieldset>  -->
-      <!-- <legend>difficulty</legend>  -->
-      <li><input  type="radio" name="level" value="0" /> 傻瓜</li> 
-      <li><input type="radio" name="level" value="1" /> 简单</li> 
-      <li><input type="radio" name="level" value="2" checked="" /> 普通</li> 
-      <li><input type="radio" name="level" value="3" /> 困难 </li> 
-     <!-- </fieldset>  -->
-    </ul> 
-    <br /> 
-    <br /> 
-   </div> 
-  </div> 
-  <!-- </tr>
-		</tbody></table> --> 
- </body>
-</html>
+	<body style="position: relative; margin-top: 82px !important;">
+		<table>
+			<tbody><tr>
+				<td valign="top">
+					<div style="height:540px;font-size:20px;font-family:Arial">
+						<div id="welcome">
+							<span style="font-size:40px;font-family:Arial;color:red">game<br></span>
+							<span style="font-size:15px;font-family:Arial;text-align:right;">author:<a href="http://ubuyaolan.github.io">@keefor</a></span>
+						</div>
+						
+						<hr>
+						
+						<div id="opera">
+						<fieldset>	
+						<legend>side</legend>
+						<input type="radio" name="side" value="BLACK" checked=""> black<br>
+						<input type="radio" name="side" value="WHITE"> white <br>
+						</fieldset>
+						<br>
+						
+						<fieldset>
+						<legend>difficulty</legend>
+						<input type="radio" name="level" value="0"> idiot<br>
+						<input type="radio" name="level" value="1"> easy<br>
+						<input type="radio" name="level" value="2" checked=""> normal<br>
+						<input type="radio" name="level" value="3"> hard <br>
+						</fieldset>
+						<br>
+						
+						<input class="button" type="button" onclick="newGame()" value="Start">
+						<br>
+						<input class="button" type="button" onclick="regret()" value="Regret">
+						</div>
+						<br>
+						<div id="score" style="background:green;width:150px;">
+							<table width="100%" style="text-align:center"><tbody><tr><td>
+							<span id="bnumber" style="color:black;font-size:40px">2</span>
+							</td>
+							<td>
+							<span id="wnumber" style="color:white;font-size:40px">2</span>
+							</td></tr>
+							</tbody></table>
+						</div>
+					</div>
+				</td>
+				<td>
+					<canvas id="bdcanvas" width="540" height="540" style="background-image: url(http://slab.sinaapp.com/othello/background.jpg);"></canvas>
+				</td>
+			</tr>
+		</tbody></table>
+	
+</body></html>
