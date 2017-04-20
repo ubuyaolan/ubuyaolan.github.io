@@ -1,13 +1,12 @@
-
 <html>
- <head>
+ <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <title> game </title> 
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<script type="text/javascript" src="./js/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/jcanvas.min.js"></script>
-		<script type="text/javascript" src="./js/board.min.js"></script>
-		<script type="text/javascript" src="./js/ai2.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <script type="text/javascript" src="./js/jquery.min.js"></script> 
+  <script type="text/javascript" src="./js/jcanvas.min.js"></script> 
+  <script type="text/javascript" src="./js/board.min.js"></script> 
+  <script type="text/javascript" src="./js/ai2.min.js"></script> 
   <style>
 			.button{
 				width:120px;
@@ -318,26 +317,24 @@ list-style:none; /* 将默认的列表符号去掉 */
 padding:0; /* 将默认的内边距去掉 */
 margin:0; /* 将默认的外边距去掉 */
 }
-</style>
+</style> 
   <style type="text/css">
 #menu li { 
 float:left; /* 往左浮动 */
 
 }
-</style>
-
-<style>
+</style> 
+  <style>
 input[type='radio']{width:20px;height:20px;}
 #menu { margin-left:30px;}
-</style>
-
- </head>   
+</style> 
+ </head> 
  <body> 
   <div valign="top"> 
    <div style="font-size:20px;font-family:Arial"> 
     <div id="welcome"> 
      <span style="font-size:40px;font-family:SimHei;color:red">黑白棋<br /></span> 
-     <span style="font-size:20px;font-family:Arial;text-align:right;">author:<a href="http://ubuyaolan.github.io/">@古阳</a></span> 
+     <span style="font-size:20px;font-family:Arial;text-align:right;">author: <a href="http://ubuyaolan.github.io/">@古阳</a> </span> 
     </div> 
     <hr /> 
     <div> 
@@ -346,11 +343,11 @@ input[type='radio']{width:20px;height:20px;}
     <ul id="menu"> 
      <li><input class="button" type="button" onclick="newGame()" value="开始" /></li> 
      <li><input class="button" type="button" onclick="regret()" value="悔棋" /> </li> 
-    </ul>
+    </ul> 
     <table id="opera"> 
      <tbody> 
       <tr> 
-       <td>
+       <td> 
         <div id="score" style="background:green;width:150px;margin-left:30px;"> 
          <table width="100%" style="text-align:center"> 
           <tbody> 
@@ -362,30 +359,34 @@ input[type='radio']{width:20px;height:20px;}
          </table> 
         </div></td> 
       </tr> 
-     </tbody>
+     </tbody> 
     </table> 
-	 <br /><hr>
+    <br />
+    <hr /> 
     <ul id="menu"> 
-     <!-- <fieldset>  -->
-      <!-- <legend>side</legend>  -->
-      <li><input type="radio" name="side" value="BLACK" checked="" /> 黑子</li> 
-      <li><input type="radio" name="side" value="WHITE"  /> 白子 </li> 
-     <!-- </fieldset>  -->
-     <!--   -->
-    </ul> <br /><hr>
-    <ul id="menu" > 
-     <!-- <fieldset>  -->
-      <!-- <legend>difficulty</legend>  -->
-      <li><input  type="radio" name="level" value="0" /> 傻瓜</li> 
-      <li><input type="radio" name="level" value="1" /> 简单</li> 
-      <li><input type="radio" name="level" value="2" checked="" /> 普通</li> 
-      <li><input type="radio" name="level" value="3" /> 困难 </li> 
-     <!-- </fieldset>  -->
+     <!-- <fieldset>  --> 
+     <!-- <legend>side</legend>  --> 
+     <li><input type="radio" name="side" value="BLACK" checked="" /> 黑子</li> 
+     <li><input type="radio" name="side" value="WHITE" /> 白子 </li> 
+     <!-- </fieldset>  --> 
+     <!--   --> 
     </ul> 
-    <br /> <hr>
+    <br />
+    <hr /> 
+    <ul id="menu"> 
+     <!-- <fieldset>  --> 
+     <!-- <legend>difficulty</legend>  --> 
+     <li><input type="radio" name="level" value="0" /> 傻瓜</li> 
+     <li><input type="radio" name="level" value="1" /> 简单</li> 
+     <li><input type="radio" name="level" value="2" checked="" /> 普通</li> 
+     <li><input type="radio" name="level" value="3" /> 困难 </li> 
+     <!-- </fieldset>  --> 
+    </ul> 
+    <br /> 
+    <hr /> 
    </div> 
   </div> 
   <!-- </tr>
-		</tbody></table> --> 
+		</tbody></table> -->  
  </body>
 </html>
