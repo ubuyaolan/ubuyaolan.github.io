@@ -1,0 +1,33 @@
+<appwizard> 
+	<introduction> 
+		<name>Emlog for SAE</name> 
+		<author>郭华</author> 
+		<icon>/static/image/app_icons/emlog.jpg</icon> 
+		<homepage>http://www.emlog.net/</homepage> 
+		<description> 
+		<![CDATA[
+emlog 是 "Every Memory Log" 的简称，意即：点滴记忆。是一款基于PHP和MySQL平台的功能强大的个人博客系统(blog)。致力于为您提供快速、稳定，且在使用上又极其简单、舒适的博客服务。
+		]]>
+		</description> 
+	</introduction> 
+	<platform> 
+		<services> 
+			<service name="emlog"  params="public">Storage</service> 
+			<service size="5M">Memcache</service> 
+			<service>Mysql</service> 
+		</services> 
+		<appconfig> 
+			<tpl> 
+            <![CDATA[
+name: <<appname>>
+version: <<version>>
+handle:
+  - rewrite:if (!is_file() && !is_dir() && path ~ "^/(.*)") goto "index.php?$1%{QUERY_STRING}"
+            ]]>
+			</tpl> 
+		</appconfig> 
+	</platform> 
+	<code> 
+	<initScript>sae.install.php</initScript> 
+	</code> 
+</appwizard> 
