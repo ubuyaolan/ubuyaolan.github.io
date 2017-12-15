@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。 无法提交到github上，提示“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解释">
+<meta name="description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。无法提交到github上，提示 1“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用两个github账号">
 <meta property="og:url" content="http://yoursite.com/2017/12/15/使用两个github账号/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。 无法提交到github上，提示“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解释">
+<meta property="og:description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。无法提交到github上，提示 1“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-15T16:13:08.422Z">
+<meta property="og:updated_time" content="2017-12-15T16:14:53.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用两个github账号">
-<meta name="twitter:description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。 无法提交到github上，提示“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解释">
+<meta name="twitter:description" content="今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。无法提交到github上，提示 1“ERROR: Permission to XXX.git denied to user” 然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。 算了，也不解">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -203,8 +203,8 @@
       
 
       
-        <span itemprop="articleBody"><p>今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。</p>
-<p>无法提交到github上，提示“ERROR: Permission to XXX.git denied to user”</p>
+        <span itemprop="articleBody"><p>今天看到公司现有项目的版本管理一塌糊涂，所以打算重新建一个git库。原本电脑上有一个个人的github账号，然后新建的项目是在工作账号上。遇到一个问题。无法提交到github上，提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">“ERROR: Permission to XXX.git denied to user”</div></pre></td></tr></table></figure>
 <p>然后在网上找了一堆答案，大概意思就是没有权限，猜测，应该是已保存的github账户，没有修改这个项目的权限。</p>
 <p>算了，也不解释过程了，就大概说一下我是怎么做的吧。放弃使用https获取git，采用ssh。看网上说好处有一大堆。</p>
 <p>第一步生成一对密钥，私有和公有。分别执行两个，名称两次要不同，不然会覆盖。</p>
