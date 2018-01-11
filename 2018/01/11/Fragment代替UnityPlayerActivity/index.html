@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用？">
+<meta name="description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。 后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用">
 <meta name="keywords" content="Unity3D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fragment代替UnityPlayerActivity">
 <meta property="og:url" content="http://yoursite.com/2018/01/11/Fragment代替UnityPlayerActivity/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用？">
+<meta property="og:description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。 后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-11T13:08:53.687Z">
+<meta property="og:updated_time" content="2018-01-11T13:12:34.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fragment代替UnityPlayerActivity">
-<meta name="twitter:description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用？">
+<meta name="twitter:description" content="关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。 后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -203,21 +203,20 @@
       
 
       
-        <span itemprop="articleBody"><p>关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。<br>后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。<br>但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用？</p>
+        <span itemprop="articleBody"><p>关于Unity的Android插件制作，一直有个问题困扰，刚开写插件基本上都是从继承UnityPlayerActivity开始学起的，也不会封装插件，如果有新需求就把新的功能加到一起。</p>
+<p>后来看到ShareSDK里面，他的文件是可以单独使用的，就感觉这个好神奇啊，如果我写的也可以这样，那么写一次以后不就可以多次使用嘛。但是有个问题，如果多个插件都继承UnityPlayerActivity如何一起使用？</p>
 <p>通过自己总结，就是尽量不继承UnityPlayerActivity，要使用到Context的时候可以通过UnityPlayer.currentActivity来获取，这个还是通过看别人的代码知道的，其实。。。算了没什么说的，多看文档吧。</p>
 <p>今天遇到一个问题就是我要使用Activity里的onActivityResult这个方法来开启录屏，我有想到通过多添加一层Activity，在这层里面来开启录屏然后再关闭，但是录屏在初始化的时候用到</p>
 <blockquote>
-<blockquote>
-<blockquote>
-<p>getSystemService(MEDIA_PROJECTION_SERVICE);<br>这个会和当前Context关联，如果开启录屏后关闭Activity，这个录屏的进程可能也会被干掉(只是猜测没有试，这个不是重点)。</p>
+<p>getSystemService(MEDIA_PROJECTION_SERVICE);</p>
 </blockquote>
-</blockquote>
-</blockquote>
+<p>这个会和当前Context关联，如果开启录屏后关闭Activity，这个录屏的进程可能也会被干掉(只是猜测没有试，这个不是重点)。</p>
 <p>在网上看到一篇文章，<a href="http://blog.csdn.net/ZhangDi2017/article/details/65629589" target="_blank" rel="external">他</a>也写到了尽量不要继承UnityPlayerActivity，他使用的<a href="http://www.runoob.com/w3cnote/android-tutorial-fragment-base.html" target="_blank" rel="external">Fragment</a>。</p>
-<p>Fragment可以理解为Activity的片段,可以多个同时运行，大平板上的设置使用的就是这玩意。Activity的很多生命周期都可以在这里面找到对应的，代码也基本上都一样。下面是他的启动代码</p>
+<p>Fragment可以理解为Activity的片段,可以多个同时运行，大平板上的设置使用的就是这玩意。Activity的很多生命周期都可以在这里面找到对应的，代码也基本上都一样。</p>
+<p>下面是他的启动代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">screen = new ScreenRecordActivity();</div><div class="line">getFragmentManager().beginTransaction().add(screen, &quot;REC&quot;).commit();</div></pre></td></tr></table></figure>
 <p>在android里还有另一种方式来添加，直接在界面上添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;fragment</div><div class="line">    android:id=&quot;@+id/fragment1&quot;</div><div class="line">    android:name=&quot;com.jay.example.fragmentdemo.Fragmentone&quot; 关键地方</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;0dp&quot;</div><div class="line">    android:layout_weight=&quot;1&quot; /&gt;</div></pre></td></tr></table></figure></span>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;fragment</div><div class="line">    android:id=&quot;@+id/fragment1&quot;</div><div class="line">    android:name=&quot;com.jay.example.fragmentdemo.Fragmentone&quot; Fragment的类名</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;0dp&quot;</div><div class="line">    android:layout_weight=&quot;1&quot; /&gt;</div></pre></td></tr></table></figure></span>
       
     </div>
 
