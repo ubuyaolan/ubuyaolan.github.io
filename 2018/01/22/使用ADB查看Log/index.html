@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -37,17 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里  新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path   编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  adb insta">
+<meta name="description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里 -&amp;gt;新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path -&amp;gt;编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  ad">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用ADB查看Log">
 <meta property="og:url" content="http://yoursite.com/2018/01/22/使用ADB查看Log/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里  新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path   编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  adb insta">
+<meta property="og:description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里 -&amp;gt;新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path -&amp;gt;编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  ad">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-22T03:07:05.785Z">
+<meta property="og:updated_time" content="2018-01-22T03:24:01.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ADB查看Log">
-<meta name="twitter:description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里  新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path   编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  adb insta">
+<meta name="twitter:description" content="配置系统环境我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量 在系统环境里 -&amp;gt;新建 变量名 Android变量值 F:/SDK/platform-tools;F:/SDK/tools 在系统环境找到Path -&amp;gt;编辑 变量值 (原有值);%Android%  注意分号  ADB命令在命令行中查看LOG信息：  adb logcat -s 标签名  安装应用程序：  ad">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -203,9 +204,9 @@
 
       
         <span itemprop="articleBody"><h5 id="配置系统环境"><a href="#配置系统环境" class="headerlink" title="配置系统环境"></a>配置系统环境</h5><p>我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量</p>
-<p>在系统环境里  新建</p>
+<p>在系统环境里 -&gt;新建</p>
 <p>变量名 Android<br>变量值 F:/SDK/platform-tools;F:/SDK/tools</p>
-<p>在系统环境找到Path   编辑</p>
+<p>在系统环境找到Path -&gt;编辑</p>
 <p>变量值 (原有值);%Android%</p>
 <blockquote>
 <p>注意分号</p>
@@ -240,7 +241,7 @@
 </blockquote>
 <p>启动Activity：</p>
 <blockquote>
-<p>adb shell am start -n 包名/包名＋类名（-n 类名,-a action,-d date,-m MIME-TYPE,-c category,-e 扩展数据,等）。</p>
+<p>adb shell<br>am start -n com.example.test/com.unity3d.UnityPlayerNativeActivity（-n 类名,-a action,-d date,-m MIME-TYPE,-c category,-e 扩展数据,等）。</p>
 </blockquote>
 <p>更多命令查看<a href="http://blog.csdn.net/janronehoo/article/details/6863772/" target="_blank" rel="external">这里</a></p>
 </span>
@@ -248,6 +249,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
       
 
       
