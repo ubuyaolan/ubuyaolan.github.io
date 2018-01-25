@@ -45,7 +45,7 @@
 <meta property="og:site_name" content="keefor personal">
 <meta property="og:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
+<meta property="og:updated_time" content="2018-01-25T02:58:17.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity图片资源加载">
 <meta name="twitter:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
@@ -207,11 +207,20 @@
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。<br>不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。<br>一张图效果不明显，共准备了9张256*256的jpg图。</p>
 <h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>使用Stopwatch监测加载时长。<br>注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。在因为在加载图片时主线程阻塞，Time是不走的。</p>
 <h3 id="File读取图片"><a href="#File读取图片" class="headerlink" title="File读取图片"></a>File读取图片</h3><p>这里分为两步，<br>1）File.ReadAllBytes读取文件字节，<br>2）使用的Texture2D.LoadImage将字节转换为图片。</p>
-<h6 id="经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"><a href="#经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。" class="headerlink" title="经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"></a>经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</h6><p>个人猜测，这里主要是对图片数据进行解压，也就是为什么有jpg、png、BMP多种格式存在原因。</p>
+<blockquote>
+<p>经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</p>
+</blockquote>
+<p>个人猜测，这里主要是对图片数据进行解压，也就是为什么有jpg、png、BMP多种格式存在原因。</p>
 <h3 id="WWW读取图片"><a href="#WWW读取图片" class="headerlink" title="WWW读取图片"></a>WWW读取图片</h3><p>只需要一步。</p>
-<h6 id="经多次测试，平均加载时长25。"><a href="#经多次测试，平均加载时长25。" class="headerlink" title="经多次测试，平均加载时长25。"></a>经多次测试，平均加载时长25。</h6><p>在测试中发现，直接WWW（file+路径）即可，不需要使用异步加载。<br>该测试为加载小图片，其他资源类型未测试，PC、Android测试可行，暂未测试iOS。</p>
+<blockquote>
+<p>经多次测试，平均加载时长25。</p>
+</blockquote>
+<p>在测试中发现，直接WWW（file+路径）即可，不需要使用异步加载。<br>该测试为加载小图片，其他资源类型未测试，PC、Android测试可行，暂未测试iOS。</p>
 <h3 id="assetbundle读取"><a href="#assetbundle读取" class="headerlink" title="assetbundle读取"></a>assetbundle读取</h3><p>另外，还测试了一种将图片打包成assetbundle后加载，</p>
-<h6 id="经多次测试，平均加载时长4"><a href="#经多次测试，平均加载时长4" class="headerlink" title="经多次测试，平均加载时长4."></a>经多次测试，平均加载时长4.</h6><h3 id="童话项目"><a href="#童话项目" class="headerlink" title="童话项目"></a>童话项目</h3><p>加载外部多张图片，<br>1）、首先使用的是File加载，卡顿。<br>2）、后来改用WWW异步加载，卡顿。<br>3）、使用队列依次异步加载，间断卡顿。<br>经过上述测试，未找到可行方法。尝试修改图片大小，缩小图片一倍，加载速度明显提升。无卡顿。</p>
+<blockquote>
+<p>经多次测试，平均加载时长4.</p>
+</blockquote>
+<h3 id="童话项目"><a href="#童话项目" class="headerlink" title="童话项目"></a>童话项目</h3><p>加载外部多张图片，<br>1）、首先使用的是File加载，卡顿。<br>2）、后来改用WWW异步加载，卡顿。<br>3）、使用队列依次异步加载，间断卡顿。<br>经过上述测试，未找到可行方法。尝试修改图片大小，缩小图片一倍，加载速度明显提升。无卡顿。</p>
 </span>
       
     </div>
@@ -473,7 +482,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File读取图片"><span class="nav-number">3.</span> <span class="nav-text">File读取图片</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WWW读取图片"><span class="nav-number">4.</span> <span class="nav-text">WWW读取图片</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，平均加载时长25。"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">经多次测试，平均加载时长25。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assetbundle读取"><span class="nav-number">5.</span> <span class="nav-text">assetbundle读取</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，平均加载时长4"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">经多次测试，平均加载时长4.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#童话项目"><span class="nav-number">6.</span> <span class="nav-text">童话项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File读取图片"><span class="nav-number">3.</span> <span class="nav-text">File读取图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WWW读取图片"><span class="nav-number">4.</span> <span class="nav-text">WWW读取图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assetbundle读取"><span class="nav-number">5.</span> <span class="nav-text">assetbundle读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#童话项目"><span class="nav-number">6.</span> <span class="nav-text">童话项目</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
