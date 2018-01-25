@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="DOS," />
+  <meta name="keywords" content="Vuforia,Unity," />
 
 
 
@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
-<meta name="keywords" content="DOS">
+<meta name="description" content="Vuforia SDK v5.5.9.在项目中发现场景视口（Scene）观看，物体有阴影；游戏视口（Game）观看，物体无阴影。经过在网上查找资料，找到问题所在。Vuforia自身的问题。投影矩阵出现问题。解决方法：在ARCamera物体上（或场景其他地方）挂载如下脚本 1234567891011121314151617181920212223242526272829303132/* * Crea">
+<meta name="keywords" content="Vuforia,Unity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win7开启WiFi设置">
-<meta property="og:url" content="http://yoursite.com/2017/12/03/Win7开启WiFi设置/index.html">
+<meta property="og:title" content="AR场景无阴影">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/AR场景无阴影/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
+<meta property="og:description" content="Vuforia SDK v5.5.9.在项目中发现场景视口（Scene）观看，物体有阴影；游戏视口（Game）观看，物体无阴影。经过在网上查找资料，找到问题所在。Vuforia自身的问题。投影矩阵出现问题。解决方法：在ARCamera物体上（或场景其他地方）挂载如下脚本 1234567891011121314151617181920212223242526272829303132/* * Crea">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-03T03:22:14.286Z">
+<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win7开启WiFi设置">
-<meta name="twitter:description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
+<meta name="twitter:title" content="AR场景无阴影">
+<meta name="twitter:description" content="Vuforia SDK v5.5.9.在项目中发现场景视口（Scene）观看，物体有阴影；游戏视口（Game）观看，物体无阴影。经过在网上查找资料，找到问题所在。Vuforia自身的问题。投影矩阵出现问题。解决方法：在ARCamera物体上（或场景其他地方）挂载如下脚本 1234567891011121314151617181920212223242526272829303132/* * Crea">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Win7开启WiFi设置 | keefor personal </title>
+  <title> AR场景无阴影 | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +175,7 @@
           
           
             
-              Win7开启WiFi设置
+              AR场景无阴影
             
           
         </h1>
@@ -184,8 +184,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-12-03T00:10:50+08:00" content="2017-12-03">
-            2017-12-03
+          <time itemprop="dateCreated" datetime="2017-09-04T10:03:13+08:00" content="2017-09-04">
+            2017-09-04
           </time>
         </span>
 
@@ -203,26 +203,8 @@
       
 
       
-        <span itemprop="articleBody"><p>整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块</p>
-<h5 id="打开无线开关"><a href="#打开无线开关" class="headerlink" title="打开无线开关"></a>打开无线开关</h5><h5 id="创建WiFi"><a href="#创建WiFi" class="headerlink" title="创建WiFi"></a>创建WiFi</h5><p>在DOS里输入如下命令，创建WiFi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345</div></pre></td></tr></table></figure></p>
-<p>其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符以上！），你可以自定义</p>
-<p>PS:此命令有三个参数，可以单独使用。</p>
-<blockquote>
-<p>mode：是否启用虚拟WiFi网卡，改为disallow则为禁用；<br>ssid：无线网络名称，最好用英文（以myPC为例）；<br>key： 无线网络密码，8个以上字符（本文以abc12345为例）。</p>
-</blockquote>
-<h5 id="桥接网络"><a href="#桥接网络" class="headerlink" title="桥接网络"></a>桥接网络</h5><p>1、打开“网络共享中心”—-“更改适配器设置”，当你在“网络连接”中，看到多出一个名为“Microsoft Virtual WiFi Miniport Adapter”的无线连接2，表示开启成功。</p>
-<p>2、为了和其他网卡区分开，将其右键重命名为”虚拟WiFi”。 </p>
-<p>3、在“网络连接”中，右键单击已经连接到Internet的网络连接，</p>
-<p>“属性”→ “共享” → ”允许其他网络用户通过此计算机的Internet连接来连接(N)” → 下拉列表选择“虚拟WiFi”。</p>
-<p>点击“确定”之后，提供共享的网络图标旁会出现“共享”的字样。</p>
-<p>PS：此时可能出现“无法启用共享访问 错误代码：0x80004005：未指定错误”，遇到此情况时，右键单击桌面上的“计算机”，</p>
-<p>“管理”→在左边的菜单栏中双击打开“服务和应用程序”菜单→选择“服务”→在右边找到并选择”Windows Firewall” → </p>
-<p>点击“启用此服务”，然后再进行一次上边这段中的操作即可。</p>
-<h5 id="开启WiFi"><a href="#开启WiFi" class="headerlink" title="开启WiFi"></a>开启WiFi</h5><p>在DOS中输入下面代码开启无线网络：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan start hostednetwork，</div></pre></td></tr></table></figure>
-<p>PS：当将”start”改为”stop”时，即可关闭该无线网络。</p>
-<h5 id="连接WiFi"><a href="#连接WiFi" class="headerlink" title="连接WiFi"></a>连接WiFi</h5><p>虚拟WiFi的红叉会消失（没消失的话证明还有问题），这表示“WiFi基站”已建好。然后，其他笔记本搜索无线网络”myPC”、输入密码”abc12345”，就能共享上网了啦！<br>PS：查看wifi信息,输入下面命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan show hostednetwork</div></pre></td></tr></table></figure></p>
-</span>
+        <span itemprop="articleBody"><h6 id="Vuforia-SDK-v5-5-9"><a href="#Vuforia-SDK-v5-5-9" class="headerlink" title="Vuforia SDK v5.5.9."></a>Vuforia SDK v5.5.9.</h6><p>在项目中发现场景视口（Scene）观看，物体有阴影；游戏视口（Game）观看，物体无阴影。<br>经过在网上查找资料，找到问题所在。Vuforia自身的问题。投影矩阵出现问题。<br>解决方法：在ARCamera物体上（或场景其他地方）挂载如下脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * Created by keefor on 6/13/2017.</div><div class="line"> */</div><div class="line">using UnityEngine;</div><div class="line">using System.Collections;</div><div class="line">using Vuforia;</div><div class="line">public class FixProjectionMatrix : MonoBehaviour, IVideoBackgroundEventHandler</div><div class="line">&#123;</div><div class="line">   	private Camera[] mCameras;</div><div class="line"></div><div class="line">   	void Start()</div><div class="line">   	&#123;</div><div class="line">   	    mCameras = VuforiaBehaviour.Instance.GetComponentsInChildren&lt;Camera&gt;();</div><div class="line">   	    VuforiaBehaviour.Instance.RegisterVideoBgEventHandler(this);</div><div class="line">  	&#125;</div><div class="line"></div><div class="line">   	public void OnVideoBackgroundConfigChanged()</div><div class="line">   	&#123;</div><div class="line">        foreach (var cam in mCameras)</div><div class="line">		&#123;</div><div class="line">           var projMatrix = cam.projectionMatrix;</div><div class="line">           for (int i = 0; i &lt; 16; i++)</div><div class="line">           &#123;</div><div class="line">               if (System.Math.Abs(projMatrix[i]) &lt; 1e-6)</div><div class="line">               &#123;</div><div class="line">                   projMatrix[i] = 0.0f;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           cam.projectionMatrix = projMatrix;</div><div class="line">		&#125;</div><div class="line">   	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -230,7 +212,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DOS/" rel="tag">#DOS</a>
+            <a href="/tags/Vuforia/" rel="tag">#Vuforia</a>
+          
+            <a href="/tags/Unity/" rel="tag">#Unity</a>
           
         </div>
       
@@ -239,13 +223,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/13/Git提交已有项目/" rel="prev">Git提交已有项目</a>
+              <a href="/2017/09/04/Unity iOS录音失败/" rel="prev">Unity iOS录音失败</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/02/搭建Hexo/" rel="next">搭建(修建)Hexo</a>
+              <a href="/2017/09/03/Spine 动画残影/" rel="next">Spine 动画残影</a>
             
           </div>
         </div>
@@ -483,7 +467,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#打开无线开关"><span class="nav-number">1.</span> <span class="nav-text">打开无线开关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建WiFi"><span class="nav-number">2.</span> <span class="nav-text">创建WiFi</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桥接网络"><span class="nav-number">3.</span> <span class="nav-text">桥接网络</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启WiFi"><span class="nav-number">4.</span> <span class="nav-text">开启WiFi</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接WiFi"><span class="nav-number">5.</span> <span class="nav-text">连接WiFi</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Vuforia-SDK-v5-5-9"><span class="nav-number">1.</span> <span class="nav-text">Vuforia SDK v5.5.9.</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

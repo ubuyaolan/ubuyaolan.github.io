@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="DOS," />
+  <meta name="keywords" content="Unity," />
 
 
 
@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
-<meta name="keywords" content="DOS">
+<meta name="description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win7开启WiFi设置">
-<meta property="og:url" content="http://yoursite.com/2017/12/03/Win7开启WiFi设置/index.html">
+<meta property="og:title" content="Unity图片资源加载">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/Unity图片加载/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
+<meta property="og:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-03T03:22:14.286Z">
+<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win7开启WiFi设置">
-<meta name="twitter:description" content="整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块 打开无线开关创建WiFi在DOS里输入如下命令，创建WiFi1netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345 其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符">
+<meta name="twitter:title" content="Unity图片资源加载">
+<meta name="twitter:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Win7开启WiFi设置 | keefor personal </title>
+  <title> Unity图片资源加载 | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +175,7 @@
           
           
             
-              Win7开启WiFi设置
+              Unity图片资源加载
             
           
         </h1>
@@ -184,8 +184,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-12-03T00:10:50+08:00" content="2017-12-03">
-            2017-12-03
+          <time itemprop="dateCreated" datetime="2017-09-04T12:30:13+08:00" content="2017-09-04">
+            2017-09-04
           </time>
         </span>
 
@@ -203,25 +203,15 @@
       
 
       
-        <span itemprop="articleBody"><p>整理一下之前的资料，在不下载WiFi助手之类的软件，如何开启WiFi。当然前提是你的电脑要有WiFi模块</p>
-<h5 id="打开无线开关"><a href="#打开无线开关" class="headerlink" title="打开无线开关"></a>打开无线开关</h5><h5 id="创建WiFi"><a href="#创建WiFi" class="headerlink" title="创建WiFi"></a>创建WiFi</h5><p>在DOS里输入如下命令，创建WiFi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan set hostednetwork mode=allow ssid=myPC key=abc12345</div></pre></td></tr></table></figure></p>
-<p>其中ssid后面的“myPC”是wifi的名称、key后面的“abc12345”是wifi的密码（8个字符以上！），你可以自定义</p>
-<p>PS:此命令有三个参数，可以单独使用。</p>
-<blockquote>
-<p>mode：是否启用虚拟WiFi网卡，改为disallow则为禁用；<br>ssid：无线网络名称，最好用英文（以myPC为例）；<br>key： 无线网络密码，8个以上字符（本文以abc12345为例）。</p>
-</blockquote>
-<h5 id="桥接网络"><a href="#桥接网络" class="headerlink" title="桥接网络"></a>桥接网络</h5><p>1、打开“网络共享中心”—-“更改适配器设置”，当你在“网络连接”中，看到多出一个名为“Microsoft Virtual WiFi Miniport Adapter”的无线连接2，表示开启成功。</p>
-<p>2、为了和其他网卡区分开，将其右键重命名为”虚拟WiFi”。 </p>
-<p>3、在“网络连接”中，右键单击已经连接到Internet的网络连接，</p>
-<p>“属性”→ “共享” → ”允许其他网络用户通过此计算机的Internet连接来连接(N)” → 下拉列表选择“虚拟WiFi”。</p>
-<p>点击“确定”之后，提供共享的网络图标旁会出现“共享”的字样。</p>
-<p>PS：此时可能出现“无法启用共享访问 错误代码：0x80004005：未指定错误”，遇到此情况时，右键单击桌面上的“计算机”，</p>
-<p>“管理”→在左边的菜单栏中双击打开“服务和应用程序”菜单→选择“服务”→在右边找到并选择”Windows Firewall” → </p>
-<p>点击“启用此服务”，然后再进行一次上边这段中的操作即可。</p>
-<h5 id="开启WiFi"><a href="#开启WiFi" class="headerlink" title="开启WiFi"></a>开启WiFi</h5><p>在DOS中输入下面代码开启无线网络：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan start hostednetwork，</div></pre></td></tr></table></figure>
-<p>PS：当将”start”改为”stop”时，即可关闭该无线网络。</p>
-<h5 id="连接WiFi"><a href="#连接WiFi" class="headerlink" title="连接WiFi"></a>连接WiFi</h5><p>虚拟WiFi的红叉会消失（没消失的话证明还有问题），这表示“WiFi基站”已建好。然后，其他笔记本搜索无线网络”myPC”、输入密码”abc12345”，就能共享上网了啦！<br>PS：查看wifi信息,输入下面命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netsh wlan show hostednetwork</div></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>分为File读取和WWW异步读取。以及Assetbundle加载。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。<br>不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。<br>一张图效果不明显，共准备了9张256*256的jpg图。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>使用Stopwatch监测加载时长。<br>注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。在因为在加载图片时主线程阻塞，Time是不走的。</p>
+<h3 id="File读取图片"><a href="#File读取图片" class="headerlink" title="File读取图片"></a>File读取图片</h3><p>这里分为两步，<br>1）File.ReadAllBytes读取文件字节，<br>2）使用的Texture2D.LoadImage将字节转换为图片。</p>
+<h6 id="经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"><a href="#经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。" class="headerlink" title="经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"></a>经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</h6><p>个人猜测，这里主要是对图片数据进行解压，也就是为什么有jpg、png、BMP多种格式存在原因。</p>
+<h3 id="WWW读取图片"><a href="#WWW读取图片" class="headerlink" title="WWW读取图片"></a>WWW读取图片</h3><p>只需要一步。</p>
+<h6 id="经多次测试，平均加载时长25。"><a href="#经多次测试，平均加载时长25。" class="headerlink" title="经多次测试，平均加载时长25。"></a>经多次测试，平均加载时长25。</h6><p>在测试中发现，直接WWW（file+路径）即可，不需要使用异步加载。<br>该测试为加载小图片，其他资源类型未测试，PC、Android测试可行，暂未测试iOS。</p>
+<h3 id="assetbundle读取"><a href="#assetbundle读取" class="headerlink" title="assetbundle读取"></a>assetbundle读取</h3><p>另外，还测试了一种将图片打包成assetbundle后加载，</p>
+<h6 id="经多次测试，平均加载时长4"><a href="#经多次测试，平均加载时长4" class="headerlink" title="经多次测试，平均加载时长4."></a>经多次测试，平均加载时长4.</h6><h3 id="童话项目"><a href="#童话项目" class="headerlink" title="童话项目"></a>童话项目</h3><p>加载外部多张图片，<br>1）、首先使用的是File加载，卡顿。<br>2）、后来改用WWW异步加载，卡顿。<br>3）、使用队列依次异步加载，间断卡顿。<br>经过上述测试，未找到可行方法。尝试修改图片大小，缩小图片一倍，加载速度明显提升。无卡顿。</p>
 </span>
       
     </div>
@@ -230,7 +220,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DOS/" rel="tag">#DOS</a>
+            <a href="/tags/Unity/" rel="tag">#Unity</a>
           
         </div>
       
@@ -239,13 +229,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/13/Git提交已有项目/" rel="prev">Git提交已有项目</a>
+              <a href="/2017/09/08/Shade学习总结/" rel="prev">Shade学习总结</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/02/搭建Hexo/" rel="next">搭建(修建)Hexo</a>
+              <a href="/2017/09/04/Unity iOS录音失败/" rel="next">Unity iOS录音失败</a>
             
           </div>
         </div>
@@ -483,7 +473,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#打开无线开关"><span class="nav-number">1.</span> <span class="nav-text">打开无线开关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建WiFi"><span class="nav-number">2.</span> <span class="nav-text">创建WiFi</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桥接网络"><span class="nav-number">3.</span> <span class="nav-text">桥接网络</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启WiFi"><span class="nav-number">4.</span> <span class="nav-text">开启WiFi</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接WiFi"><span class="nav-number">5.</span> <span class="nav-text">连接WiFi</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File读取图片"><span class="nav-number">3.</span> <span class="nav-text">File读取图片</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WWW读取图片"><span class="nav-number">4.</span> <span class="nav-text">WWW读取图片</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，平均加载时长25。"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">经多次测试，平均加载时长25。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assetbundle读取"><span class="nav-number">5.</span> <span class="nav-text">assetbundle读取</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经多次测试，平均加载时长4"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">经多次测试，平均加载时长4.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#童话项目"><span class="nav-number">6.</span> <span class="nav-text">童话项目</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
