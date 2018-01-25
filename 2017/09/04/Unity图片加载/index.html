@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
+<meta name="description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。1234567891011Stopwatch sw = new Stopwat">
 <meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity图片资源加载">
 <meta property="og:url" content="http://yoursite.com/2017/09/04/Unity图片加载/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
+<meta property="og:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。1234567891011Stopwatch sw = new Stopwat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-25T02:59:28.307Z">
+<meta property="og:updated_time" content="2018-01-25T03:11:12.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity图片资源加载">
-<meta name="twitter:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。">
+<meta name="twitter:description" content="分为File读取和WWW异步读取。以及Assetbundle加载。 准备工作修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。一张图效果不明显，共准备了9张256*256的jpg图。 方法使用Stopwatch监测加载时长。1234567891011Stopwatch sw = new Stopwat">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -205,7 +205,8 @@
       
         <span itemprop="articleBody"><p>分为File读取和WWW异步读取。以及Assetbundle加载。</p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>修改了图片后缀，二者加载正常，忘记当时为什么要修改后缀了，可能是测试后缀时候影响加载把。<br>不过也说明，文件加载是通过文件内部所携带文件格式数据判断的。<br>一张图效果不明显，共准备了9张256*256的jpg图。</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>使用<a href="https://www.cnblogs.com/kaituorensheng/p/7105639.html" target="_blank" rel="external">Stopwatch</a>监测加载时长。<br>注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。在因为在加载图片时主线程阻塞，Time是不走的。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>使用Stopwatch监测加载时长。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Stopwatch sw = new Stopwatch();</div><div class="line">sw.Start();</div><div class="line">NewTexture2d.Apply();</div><div class="line">sw.Stop();</div><div class="line">Debug.Log(sw.ElapsedMilliseconds);</div><div class="line">	</div><div class="line">sw.Reset();</div><div class="line">sw.Start();</div><div class="line">NewTexture2d.Apply();</div><div class="line">sw.Stop();</div><div class="line">Debug.Log(sw.ElapsedMilliseconds);</div></pre></td></tr></table></figure></p>
+<p>注意：不要使用UnityEngine.Time，否则你可能会发现时间都差不多。在因为在加载图片时主线程阻塞，Time是不走的。</p>
 <h3 id="File读取图片"><a href="#File读取图片" class="headerlink" title="File读取图片"></a>File读取图片</h3><p>这里分为两步，<br>1）File.ReadAllBytes读取文件字节，<br>2）使用的Texture2D.LoadImage将字节转换为图片。</p>
 <blockquote>
 <p>经多次测试，加载平均时长是11。然而，只是读取字节的话，速度为0。</p>
