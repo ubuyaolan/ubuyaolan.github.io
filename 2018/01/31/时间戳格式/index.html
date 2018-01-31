@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Unity,iOS," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,18 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
-<meta name="keywords" content="Unity,iOS">
+<meta name="description" content="DateTime.Now.ToString(); 　　符号　　|说明语法         |示例(2016-05-09 13:09:55:2350)————|—————|———————————　　yy        |年份后两位        |DateTime.Now.ToString(“yy”)    DateTime.Now.ToString(“yy”); // =&amp;gt; 16　　yyyy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity iOS录音失败">
-<meta property="og:url" content="http://yoursite.com/2017/09/04/Unity iOS录音失败/index.html">
+<meta property="og:title" content="时间戳格式">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/时间戳格式/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta property="og:description" content="DateTime.Now.ToString(); 　　符号　　|说明语法         |示例(2016-05-09 13:09:55:2350)————|—————|———————————　　yy        |年份后两位        |DateTime.Now.ToString(“yy”)    DateTime.Now.ToString(“yy”); // =&amp;gt; 16　　yyyy">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
+<meta property="og:updated_time" content="2018-01-31T06:10:59.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity iOS录音失败">
-<meta name="twitter:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta name="twitter:title" content="时间戳格式">
+<meta name="twitter:description" content="DateTime.Now.ToString(); 　　符号　　|说明语法         |示例(2016-05-09 13:09:55:2350)————|—————|———————————　　yy        |年份后两位        |DateTime.Now.ToString(“yy”)    DateTime.Now.ToString(“yy”); // =&amp;gt; 16　　yyyy">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +57,7 @@
   };
 </script>
 
-  <title> Unity iOS录音失败 | keefor personal </title>
+  <title> 时间戳格式 | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +174,7 @@
           
           
             
-              Unity iOS录音失败
+              时间戳格式
             
           
         </h1>
@@ -184,8 +183,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-09-04T12:03:13+08:00" content="2017-09-04">
-            2017-09-04
+          <time itemprop="dateCreated" datetime="2018-01-31T14:10:24+08:00" content="2018-01-31">
+            2018-01-31
           </time>
         </span>
 
@@ -203,43 +202,24 @@
       
 
       
-        <span itemprop="articleBody"><h6 id="Unity-版本-5-2-3"><a href="#Unity-版本-5-2-3" class="headerlink" title="Unity 版本 5.2.3"></a>Unity 版本 5.2.3</h6><p>使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。<br>可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，</p>
-<ul>
-<li><p>第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。<br>此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出。</p>
-</li>
-<li><p>第二种解决方法，调用iOS原生代码，关闭录音。代码如下：</p>
-</li>
-</ul>
-<p>iOS文件夹下放置文件：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</div><div class="line">void SetPreferredSampleRate(int sampleRate) &#123;</div><div class="line">	AVAudioSession *audioSession = [AVAudioSession sharedInstance];</div><div class="line">	[audioSession setPreferredHardwareSampleRate:sampleRate error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Unity调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">        </div><div class="line">[DllImport (&quot;__Internal&quot;)]</div><div class="line">        </div><div class="line">private static extern void SetPreferredSampleRate(int sampleRate);</div><div class="line"></div><div class="line">#endif</div><div class="line"></div><div class="line">public static void EnableRecording()</div><div class="line">&#123;</div><div class="line">	if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">       </div><div class="line">	SetPreferredSampleRate(AudioSettings.outputSampleRate);</div><div class="line">		</div><div class="line">	#endif</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><pre><code>DateTime.Now.ToString();
+</code></pre><p>　　符号　　|说明语法         |示例(2016-05-09 13:09:55:2350)<br>————|—————|———————————<br>　　yy        |年份后两位        |DateTime.Now.ToString(“yy”)    DateTime.Now.ToString(“yy”); // =&gt; 16<br>　　yyyy    |4位年份        |DateTime.Now.ToString(“yyyy”)    DateTime.Now.ToString(“yyyy”); // =&gt; 2016<br>　　MM        |两位月份         |DateTime.Now.ToString(“MM”)    DateTime.Now.ToString(“MM”); // =&gt; 05<br>　　dd        |日数            |DateTime.Now.ToString(“dd”)    DateTime.Now.ToString(“dd”); // =&gt; 09<br>　　ddd        |周几            |DateTime.Now.ToString(“ddd”)    DateTime.Now.ToString(“ddd”); // =&gt; 周一<br>　　dddd    |星期几              |DateTime.Now.ToString(“dddd”)    DateTime.Now.ToString(“dddd”); // =&gt; 星期一<br>　　hh        |12小时制的小时数|DateTime.Now.ToString(“hh”)     DateTime.Now.ToString(“hh”); // =&gt; 01<br>　　HH        |24小时制的小时数|DateTime.Now.ToString(“HH”)    DateTime.Now.ToString(“HH”); // =&gt; 13<br>　　mm        |分钟数            |DateTime.Now.ToString(“mm”)    DateTime.Now.ToString(“mm”); // =&gt; 09<br>　　ss        |秒数            |DateTime.Now.ToString(“ss”)    DateTime.Now.ToString(“ss”); // =&gt; 55<br>　　ff        |毫秒数前2位    |DateTime.Now.ToString(“ff”)    DateTime.Now.ToString(“ff”); // =&gt; 23<br>　　fff        |毫秒数前3位    |DateTime.Now.ToString(“fff”)    DateTime.Now.ToString(“fff”); // =&gt; 235<br>　　ffff    |毫秒数前4位    |DateTime.Now.ToString(“ffff”)    DateTime.Now.ToString(“ffff”); // =&gt; 2350</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Unity/" rel="tag">#Unity</a>
-          
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/04/Unity图片加载/" rel="prev">Unity图片资源加载</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/04/AR场景无阴影/" rel="next">AR场景无阴影</a>
+              <a href="/2018/01/22/使用ADB查看Log/" rel="next">使用ADB查看Log</a>
             
           </div>
         </div>
@@ -477,7 +457,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Unity-版本-5-2-3"><span class="nav-number">1.</span> <span class="nav-text">Unity 版本 5.2.3</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
