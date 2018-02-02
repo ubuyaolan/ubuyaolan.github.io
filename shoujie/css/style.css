@@ -207,7 +207,6 @@ ul.social-icons li {
     font-size:35px;
 }
 .copyright {
-    margin-top:40px;
     border-top:1px solid rgba(255,255,255,0.31);
     padding-top:40px;
 }
@@ -224,30 +223,6 @@ ul.social-icons li a {
 }
 .footer-logo h1 {
     color: white;
-}
-.social-icons ul li a i{
-	color: white;
-	border-color: white;
-}
-.facebook a:hover i {
-    color:#fff;
-    background-color:#3B5998;
-}
-.twitter a:hover i {
-    color:#fff;
-    background-color: #2A80BA;
-}
-.linkedin a:hover i {
-    color:#fff;
-    background-color:#007bb6;
-}
-.googleplus a:hover i {
-    color:#fff;
-    background-color:#dd4b39;
-}
-.github a:hover i {
-    color:#fff;
-    background-color: #444;
 }
 .back-to-top {
     cursor: pointer;
