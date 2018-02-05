@@ -37,17 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="DateTime.Now.ToString();    符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 DateTime.Now.T">
+<meta name="description" content="时间代码DateTime.Now.ToString();     时间格式   符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 Da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间戳格式">
 <meta property="og:url" content="http://yoursite.com/2018/01/31/时间戳格式/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="DateTime.Now.ToString();    符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 DateTime.Now.T">
+<meta property="og:description" content="时间代码DateTime.Now.ToString();     时间格式   符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 Da">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T06:55:00.162Z">
+<meta property="og:updated_time" content="2018-02-04T09:13:14.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="时间戳格式">
-<meta name="twitter:description" content="DateTime.Now.ToString();    符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 DateTime.Now.T">
+<meta name="twitter:description" content="时间代码DateTime.Now.ToString();     时间格式   符号 说明语法 示例(2016-05-09 13:09:55:2350)     yy 年份后两位 DateTime.Now.ToString(“yy”); // =&amp;gt; 16   yyyy 4位年份 DateTime.Now.ToString(“yyyy”); // =&amp;gt; 2016   MM 两位月份 Da">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -202,8 +202,8 @@
       
 
       
-        <span itemprop="articleBody"><pre><code>DateTime.Now.ToString();
-</code></pre><table>
+        <span itemprop="articleBody"><h3 id="时间代码"><a href="#时间代码" class="headerlink" title="时间代码"></a>时间代码</h3><pre><code>DateTime.Now.ToString();    
+</code></pre><h3 id="时间格式"><a href="#时间格式" class="headerlink" title="时间格式"></a>时间格式</h3><table>
 <thead>
 <tr>
 <th>符号</th>
@@ -279,6 +279,13 @@
 </tr>
 </tbody>
 </table>
+<h3 id="string格式的日期时间字符串转为DateTime类型"><a href="#string格式的日期时间字符串转为DateTime类型" class="headerlink" title="string格式的日期时间字符串转为DateTime类型"></a>string格式的日期时间字符串转为DateTime类型</h3><h4 id="Convert-ToDateTime-string"><a href="#Convert-ToDateTime-string" class="headerlink" title="Convert.ToDateTime(string)"></a>Convert.ToDateTime(string)</h4><p>string格式有要求，必须是yyyy-MM-dd hh:mm:ss</p>
+<h4 id="Convert-ToDateTime-string-IFormatProvider"><a href="#Convert-ToDateTime-string-IFormatProvider" class="headerlink" title="Convert.ToDateTime(string, IFormatProvider)"></a>Convert.ToDateTime(string, IFormatProvider)</h4><pre><code>DateTimeFormatInfo dtFormat = new System.GlobalizationDateTimeFormatInfo();
+dtFormat.ShortDatePattern = &quot;yyyy/MM/dd&quot;;
+DateTime dt = Convert.ToDateTime(&quot;2011/05/26&quot;, dtFormat);
+</code></pre><h4 id="DateTime-ParseExact"><a href="#DateTime-ParseExact" class="headerlink" title="DateTime.ParseExact()"></a>DateTime.ParseExact()</h4><pre><code>string dateString = &quot;20110526&quot;;
+DateTime dt = DateTime.ParseExact(dateString, &quot;yyyyMMdd&quot;, System.Globalization.CultureInfo.CurrentCulture);
+</code></pre><p>或者<br>    DateTime dt = DateTime.ParseExact(dateString, “yyyyMMdd”, System.Globalization.CultureInfo.InvariantCulture);</p>
 </span>
       
     </div>
@@ -289,6 +296,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/05/Android7-0安装APK/" rel="prev">Android7.0安装APK</a>
             
           </div>
 
@@ -490,7 +499,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -532,7 +541,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间代码"><span class="nav-number">1.</span> <span class="nav-text">时间代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间格式"><span class="nav-number">2.</span> <span class="nav-text">时间格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string格式的日期时间字符串转为DateTime类型"><span class="nav-number">3.</span> <span class="nav-text">string格式的日期时间字符串转为DateTime类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Convert-ToDateTime-string"><span class="nav-number">3.1.</span> <span class="nav-text">Convert.ToDateTime(string)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Convert-ToDateTime-string-IFormatProvider"><span class="nav-number">3.2.</span> <span class="nav-text">Convert.ToDateTime(string, IFormatProvider)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DateTime-ParseExact"><span class="nav-number">3.3.</span> <span class="nav-text">DateTime.ParseExact()</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
