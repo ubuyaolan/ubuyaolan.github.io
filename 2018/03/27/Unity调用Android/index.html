@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Unity,iOS," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,18 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
-<meta name="keywords" content="Unity,iOS">
+<meta name="description" content="准备工作1、JDK、SDK、Eclipe、ADT或者Android Studio2、Android项目创建3、导入Android支持jarClass.jar路径：    Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Developmen\Classes Android代码编辑1、普通类，和java编写没有不同，可以带">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity iOS录音失败">
-<meta property="og:url" content="http://yoursite.com/2017/09/04/Unity iOS录音失败/index.html">
+<meta property="og:title" content="Unity调用Android">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/Unity调用Android/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta property="og:description" content="准备工作1、JDK、SDK、Eclipe、ADT或者Android Studio2、Android项目创建3、导入Android支持jarClass.jar路径：    Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Developmen\Classes Android代码编辑1、普通类，和java编写没有不同，可以带">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
+<meta property="og:updated_time" content="2018-03-27T03:24:08.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity iOS录音失败">
-<meta name="twitter:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta name="twitter:title" content="Unity调用Android">
+<meta name="twitter:description" content="准备工作1、JDK、SDK、Eclipe、ADT或者Android Studio2、Android项目创建3、导入Android支持jarClass.jar路径：    Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Developmen\Classes Android代码编辑1、普通类，和java编写没有不同，可以带">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +57,7 @@
   };
 </script>
 
-  <title> Unity iOS录音失败 | keefor personal </title>
+  <title> Unity调用Android | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +174,7 @@
           
           
             
-              Unity iOS录音失败
+              Unity调用Android
             
           
         </h1>
@@ -184,8 +183,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-09-04T12:03:13+08:00" content="2017-09-04">
-            2017-09-04
+          <time itemprop="dateCreated" datetime="2018-03-27T11:22:29+08:00" content="2018-03-27">
+            2018-03-27
           </time>
         </span>
 
@@ -203,43 +202,28 @@
       
 
       
-        <span itemprop="articleBody"><h6 id="Unity-版本-5-2-3"><a href="#Unity-版本-5-2-3" class="headerlink" title="Unity 版本 5.2.3"></a>Unity 版本 5.2.3</h6><p>使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。<br>可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，</p>
-<ul>
-<li><p>第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。<br>此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出。</p>
-</li>
-<li><p>第二种解决方法，调用iOS原生代码，关闭录音。代码如下：</p>
-</li>
-</ul>
-<p>iOS文件夹下放置文件：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</div><div class="line">void SetPreferredSampleRate(int sampleRate) &#123;</div><div class="line">	AVAudioSession *audioSession = [AVAudioSession sharedInstance];</div><div class="line">	[audioSession setPreferredHardwareSampleRate:sampleRate error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Unity调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">        </div><div class="line">[DllImport (&quot;__Internal&quot;)]</div><div class="line">        </div><div class="line">private static extern void SetPreferredSampleRate(int sampleRate);</div><div class="line"></div><div class="line">#endif</div><div class="line"></div><div class="line">public static void EnableRecording()</div><div class="line">&#123;</div><div class="line">	if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">       </div><div class="line">	SetPreferredSampleRate(AudioSettings.outputSampleRate);</div><div class="line">		</div><div class="line">	#endif</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>1、JDK、SDK、Eclipe、ADT或者Android Studio<br>2、Android项目创建<br>3、导入Android支持jar<br>Class.jar路径：    Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Developmen\Classes</p>
+<h3 id="Android代码编辑"><a href="#Android代码编辑" class="headerlink" title="Android代码编辑"></a>Android代码编辑</h3><p>1、普通类，和java编写没有不同，可以带参数，可以有返回值。尽量减少两者之间的调用，最好是用java代码处理完毕再返回给unity。<br>2、需要使用到Activity并且在Unity里调用的类，继承UnityPlayerActivity。<br>protectedvoidonCreate(Bundle savedInstanceState)<br> {<br>super.onCreate(savedInstanceState);<br>// setContentView(R.layout.activity_main);<br>}<br>在路径    Unity\Editor\Data\PlaybackEngines\AndroidPlayer  下找到AndroidManifest文件，拷贝放到Unity工程Plugins/Android下，在里面添加<activity>标签。</activity></p>
+<h3 id="Unity调用"><a href="#Unity调用" class="headerlink" title="Unity调用"></a>Unity调用</h3><p>导出Jar文件，在Unity工程里创建Plugins/Android/lib文件夹，把jar文件放进去。</p>
+<p>Unity里使用AndroidJavaClass、AndroidJavaObject类来调用、操作java代码。</p>
+<p>AndroidJavaClass直接是这个类，<br>一般通过这个类获取静态方法，AndroidJavaObject也可以。CallStatic&lt;返回值&gt;(“方法名”，可变参数)<br>AndroidJavaObject是创建这个类的对象，和java对象使用相同<br>可以调用这个类里的任意方法和字段。Call&lt;返回值&gt;(“方法名”,可变参数)，Get(“字段名”)</p>
+<h3 id="Android发送数据到Unity"><a href="#Android发送数据到Unity" class="headerlink" title="Android发送数据到Unity"></a>Android发送数据到Unity</h3><p>使用UnityPlayer.UnitySendMessage方法<br>UnityPlayer.UnitySendMessage（“接收数据的脚本所在物体名”，“方法名”，参数）<br>只能发送string类型数据，不可变参数。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Unity/" rel="tag">#Unity</a>
-          
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/04/Unity图片加载/" rel="prev">Unity图片资源加载</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/04/AR场景无阴影/" rel="next">AR场景无阴影</a>
+              <a href="/2018/03/06/Android-Studio-引用Jar/" rel="next">Android Studio 引用Jar</a>
             
           </div>
         </div>
@@ -477,7 +461,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Unity-版本-5-2-3"><span class="nav-number">1.</span> <span class="nav-text">Unity 版本 5.2.3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android代码编辑"><span class="nav-number">2.</span> <span class="nav-text">Android代码编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity调用"><span class="nav-number">3.</span> <span class="nav-text">Unity调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android发送数据到Unity"><span class="nav-number">4.</span> <span class="nav-text">Android发送数据到Unity</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

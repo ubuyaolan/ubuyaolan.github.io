@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Unity,iOS," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
-<meta name="keywords" content="Unity,iOS">
+<meta name="description" content="Android Studio引用第三方库很方便，只需要一句代码就可以搞定，几种引用第三方库的方式，总结一下： 方式:1：它就会自动把这个包下载下来，并且引用它。节省git空间，而且修改版本也很方便。 compile &amp;apos;com.android.support:support-v4:23.3.0&amp;apos; 方式2：引用libs下所有jar包 compile fileTree(dir: &amp;a">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity iOS录音失败">
-<meta property="og:url" content="http://yoursite.com/2017/09/04/Unity iOS录音失败/index.html">
+<meta property="og:title" content="Android Studio 引用Jar">
+<meta property="og:url" content="http://yoursite.com/2018/03/06/Android-Studio-引用Jar/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta property="og:description" content="Android Studio引用第三方库很方便，只需要一句代码就可以搞定，几种引用第三方库的方式，总结一下： 方式:1：它就会自动把这个包下载下来，并且引用它。节省git空间，而且修改版本也很方便。 compile &amp;apos;com.android.support:support-v4:23.3.0&amp;apos; 方式2：引用libs下所有jar包 compile fileTree(dir: &amp;a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
+<meta property="og:updated_time" content="2018-03-06T06:50:35.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity iOS录音失败">
-<meta name="twitter:description" content="Unity 版本 5.2.3使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，  第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出">
+<meta name="twitter:title" content="Android Studio 引用Jar">
+<meta name="twitter:description" content="Android Studio引用第三方库很方便，只需要一句代码就可以搞定，几种引用第三方库的方式，总结一下： 方式:1：它就会自动把这个包下载下来，并且引用它。节省git空间，而且修改版本也很方便。 compile &amp;apos;com.android.support:support-v4:23.3.0&amp;apos; 方式2：引用libs下所有jar包 compile fileTree(dir: &amp;a">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Unity iOS录音失败 | keefor personal </title>
+  <title> Android Studio 引用Jar | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +175,7 @@
           
           
             
-              Unity iOS录音失败
+              Android Studio 引用Jar
             
           
         </h1>
@@ -184,8 +184,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-09-04T12:03:13+08:00" content="2017-09-04">
-            2017-09-04
+          <time itemprop="dateCreated" datetime="2018-03-06T14:46:54+08:00" content="2018-03-06">
+            2018-03-06
           </time>
         </span>
 
@@ -203,18 +203,20 @@
       
 
       
-        <span itemprop="articleBody"><h6 id="Unity-版本-5-2-3"><a href="#Unity-版本-5-2-3" class="headerlink" title="Unity 版本 5.2.3"></a>Unity 版本 5.2.3</h6><p>使用UnityEngine.Microphone录音时，在iOS系统下，首次录音正常，再次录音，录音失败。<br>可通过报错的字面意思了解到，大概就是由于录音没有关闭造成的，</p>
-<ul>
-<li><p>第一种解决方法，在PlayerSetting-》Other Setting下勾选 Prepare iOS for Recording。<br>此种方法可以解决无法录音的问题，但是又会造成新的问题。声音在听筒发出。</p>
-</li>
-<li><p>第二种解决方法，调用iOS原生代码，关闭录音。代码如下：</p>
-</li>
-</ul>
-<p>iOS文件夹下放置文件：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</div><div class="line">void SetPreferredSampleRate(int sampleRate) &#123;</div><div class="line">	AVAudioSession *audioSession = [AVAudioSession sharedInstance];</div><div class="line">	[audioSession setPreferredHardwareSampleRate:sampleRate error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Unity调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">        </div><div class="line">[DllImport (&quot;__Internal&quot;)]</div><div class="line">        </div><div class="line">private static extern void SetPreferredSampleRate(int sampleRate);</div><div class="line"></div><div class="line">#endif</div><div class="line"></div><div class="line">public static void EnableRecording()</div><div class="line">&#123;</div><div class="line">	if UNITY_IPHONE &amp;&amp; !UNITY_EDITOR</div><div class="line">       </div><div class="line">	SetPreferredSampleRate(AudioSettings.outputSampleRate);</div><div class="line">		</div><div class="line">	#endif</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</span>
+        <span itemprop="articleBody"><p>Android Studio引用第三方库很方便，只需要一句代码就可以搞定，几种引用第三方库的方式，总结一下：</p>
+<p>方式:1：它就会自动把这个包下载下来，并且引用它。节省git空间，而且修改版本也很方便。</p>
+<pre><code>compile &apos;com.android.support:support-v4:23.3.0&apos;
+</code></pre><p>方式2：引用libs下所有jar包</p>
+<pre><code>compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])
+</code></pre><p>方式3：引用一个jar</p>
+<pre><code>compile files(&apos;libs/fastjson-1.1.53.android.jar&apos;)
+</code></pre><p>方式4：引用一个aar文件，注意并不能像 方式2 那样自动引用全部的aar，而需要对每个aar分别进行引用。</p>
+<pre><code>compile(name: &apos;aar_file_name&apos;, ext: &apos;aar&apos;)
+</code></pre><p>方式5：引用库类型的项目</p>
+<pre><code>compile project(&apos;:xxxsdk&apos;)
+</code></pre><p>方式6：仅仅在编译时使用，但最终不会被编译到apk或aar里</p>
+<pre><code>provided files(&apos;libs/glide-3.7.0.jar&apos;)
+</code></pre></span>
       
     </div>
 
@@ -222,9 +224,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unity/" rel="tag">#Unity</a>
-          
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -233,13 +233,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/04/Unity图片加载/" rel="prev">Unity图片资源加载</a>
+              <a href="/2018/03/27/Unity调用Android/" rel="prev">Unity调用Android</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/04/AR场景无阴影/" rel="next">AR场景无阴影</a>
+              <a href="/2018/02/22/npm安装TypeScript后tsc依然是旧版/" rel="next">Android7.0安装APK</a>
             
           </div>
         </div>
@@ -477,7 +477,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Unity-版本-5-2-3"><span class="nav-number">1.</span> <span class="nav-text">Unity 版本 5.2.3</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
