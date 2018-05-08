@@ -1,0 +1,774 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mala">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="春江潮水连海平，海上明月共潮生" />
+
+
+
+  <meta name="keywords" content="Unity," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="原地址 http://www.bubuko.com/infodetail-2385530.html 1.Graphics.Blit：Copies source texture into destination render texture with a shader　　声明：121.public static void Blit(Texture source, RenderTexture dest">
+<meta name="keywords" content="Unity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Graphics函数">
+<meta property="og:url" content="http://yoursite.com/2018/05/02/Graphics函数/index.html">
+<meta property="og:site_name" content="keefor personal">
+<meta property="og:description" content="原地址 http://www.bubuko.com/infodetail-2385530.html 1.Graphics.Blit：Copies source texture into destination render texture with a shader　　声明：121.public static void Blit(Texture source, RenderTexture dest">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-02T02:47:27.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Graphics函数">
+<meta name="twitter:description" content="原地址 http://www.bubuko.com/infodetail-2385530.html 1.Graphics.Blit：Copies source texture into destination render texture with a shader　　声明：121.public static void Blit(Texture source, RenderTexture dest">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mala',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Graphics函数 | keefor personal </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">春江花月夜</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Graphics函数
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2018-05-02T10:37:01+08:00" content="2018-05-02">
+            2018-05-02
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>原地址 <a href="http://www.bubuko.com/infodetail-2385530.html" target="_blank" rel="external">http://www.bubuko.com/infodetail-2385530.html</a></p>
+<h3 id="1-Graphics-Blit：Copies-source-texture-into-destination-render-texture-with-a-shader"><a href="#1-Graphics-Blit：Copies-source-texture-into-destination-render-texture-with-a-shader" class="headerlink" title="1.Graphics.Blit：Copies source texture into destination render texture with a shader"></a>1.Graphics.Blit：Copies source texture into destination render texture with a shader</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.public static void Blit(Texture source, RenderTexture dest, Material mat(缺省), int pass = -1(缺省));</div><div class="line">2.public static void Blit(Texture source, RenderTexture dest, Vector2 scale, Vector2 offset);</div></pre></td></tr></table></figure></p>
+<p>　　source是源纹理，dest是目标纹理（null则直接输出到屏幕），mat表示用来渲染的材质，pass表示使用材质的哪个通道(-1表示所有通道）<br>　　Blit会设置source为mat的_MainTex变量，并把输出存给dest，dest如果为Null，blit会把输出存给屏幕缓冲区，<br>　　但是，如果main camera(Camera.main)的targetTexture不是Null，则dest输出给的是Camera.main.targetTexture，而不是屏幕缓冲区！<br>　　要想获得源纹理（一般来自当前渲染结果）的更多信息，我们需要把它作为源，通过shader把源的各种信息（法线、位置、深度等）拉到多个rt中使用，<br>　　但是，You can‘t use the Graphics.Blit since it only set one RenderTexture internally。也就是说blit只能输出到一个rt中，不能切换。<br>　　这个时候就用到MRT技术了：<br>　　一般是先SetRenderTarget设置rb数组接收多个渲染结果，接着设MRTMat的mainTex为source，然后renderQuad把渲染结果写入rb数组，这样就能得到源纹理的许多信息了：<br>　　来自：<a href="http://whisperlin.blog.163.com/blog/static/6052371020141287150719/" target="_blank" rel="external">http://whisperlin.blog.163.com/blog/static/6052371020141287150719/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">RenderTexture oldRT = RenderTexture.active;</div><div class="line">Graphics.SetRenderTarget(mrtRB, mrtTex[0].depthBuffer);</div><div class="line">testMRTMaterial.SetTexture(&quot;_mainTex&quot;, source);//我加的，因为要取源纹理的信息，所以要设置一下，才能取到</div><div class="line">testMRTMaterial.SetPass(0); //Pass 0 outputs 2 render textures.</div><div class="line"></div><div class="line">GL.Clear(false, true, Color.clear);</div><div class="line">GL.PushMatrix();</div><div class="line">GL.LoadOrtho();</div><div class="line">//Render the full screen quad manually.MRT需要这样做：When using MRT, you have to render the full screen quad manually</div><div class="line">GL.Begin(GL.QUADS);</div><div class="line">GL.TexCoord2(0.0f, 0.0f); GL.Vertex3(0.0f, 0.0f, 0.1f);</div><div class="line">GL.TexCoord2(1.0f, 0.0f); GL.Vertex3(1.0f, 0.0f, 0.1f);</div><div class="line">GL.TexCoord2(1.0f, 1.0f); GL.Vertex3(1.0f, 1.0f, 0.1f);</div><div class="line">GL.TexCoord2(0.0f, 1.0f); GL.Vertex3(0.0f, 1.0f, 0.1f);</div><div class="line">GL.End();</div><div class="line">GL.PopMatrix();</div><div class="line">//到这里已经把source的信息提取到mrtRB了，至于提取什么信息就看你testMRTMaterial的shader的第0通道的片段着色器返回什么了（这种片段着色器写法请参考链接）</div><div class="line">RenderTexture.active = oldRT;//归还给屏幕</div><div class="line">//Show the result</div><div class="line">testMRTMaterial.SetTexture(&quot;_Tex0&quot;, mrtTex[0]);</div><div class="line">testMRTMaterial.SetTexture(&quot;_Tex1&quot;, mrtTex[1]);</div><div class="line">Graphics.Blit(source, destination, testMRTMaterial, 1);//通道1是用_Tex0/1处理源纹理</div></pre></td></tr></table></figure>
+<p>　　所谓MRT技术无非就是获得更多渲染信息并用于一些处理<br>　　根据Blit的描述：Blit sets dest as the render target, sets source _MainTex property on the material, and draws a full-screen quad<br>　　对照上面MRT的做法，基本可以认为，SetRenderTarget+setMRTMatTex+GL_RenderFullScreenQuad = Blit，也就是说MRT只是用其他方法来解决blit不能多次改变rt的缺点</p>
+<h3 id="2-Graphics-SetRenderTarget：Sets-current-render-target"><a href="#2-Graphics-SetRenderTarget：Sets-current-render-target" class="headerlink" title="2.Graphics.SetRenderTarget：Sets current render target"></a>2.Graphics.SetRenderTarget：Sets current render target</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.SetRenderTarget(RenderTexture rt, int mipLevel(缺省), CubemapFace face(缺省), int depthSlice(缺省));</div><div class="line">2.SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, int mipLevel(缺省), CubemapFace face(缺省), int depthSlice(缺省));</div><div class="line">3.SetRenderTarget(RenderBuffer[] colorBuffers, RenderBuffer depthBuffer);</div></pre></td></tr></table></figure></p>
+<p>　　SetRenderTarget的作用是把gpu渲染的中间纹理或最终纹理输出到这个函数的参数中！有点像向GPU索取数据。<br>　　SetRenderTarget(RenderTexture rt）和 RenderTexture.active = rt作用一样，都是把渲染的结果存到rt中，如果为null则输出到屏幕，如果只是想要某个camera的渲染结果，用Camera.targetTexture=rt代替。<br>　　输出到rt或者colorBuffer区别应该不大，只是接收数据的数据结构不同，毕竟RenderBuffer是RenderTexture中存储RGB图和深度图数据的缓存格式，<br>　　RenderTexture.colorBuffer就是RenderBuffer格式。一般我们可以看到输入的RenderBuffer也是先定义一个RT，然后取其rb类型变量colorBuffer来输入。<br>　　特别地，第3个声明用来搞MRT，就是一个渲染输出多个纹理数据到buffers中，可以用这些buffers来输出多个图片或者用来做多样后期效果。可以参考<br>　　以前关于MRT的笔记或这篇博文：<a href="http://blog.csdn.net/ylbs110/article/details/53457576" target="_blank" rel="external">http://blog.csdn.net/ylbs110/article/details/53457576</a></p>
+<h3 id="3-Graphics-BlitMultiTap：Copies-source-texture-into-destination-for-multi-tap-shader"><a href="#3-Graphics-BlitMultiTap：Copies-source-texture-into-destination-for-multi-tap-shader" class="headerlink" title="3.Graphics.BlitMultiTap：Copies source texture into destination, for multi-tap shader"></a>3.Graphics.BlitMultiTap：Copies source texture into destination, for multi-tap shader</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">void BlitMultiTap(Texture source, RenderTexture dest, Material mat, params Vector2[] offsets);</div><div class="line">```　　</div><div class="line">	一般用来做post-processing effect，比如模糊。和Blit类似，特别地，offsets数组表示顶点纹理采样时的纹理坐标偏移，多个offsets就采样结果混合，比如模糊源纹理时可以offsets:new Vector2(-off,-off),new Vector2(off,-off),new Vector2(-off,off),new Vector2(off,off)，这个off是像素单位的。</div><div class="line"></div><div class="line">### 4.Graphics.ConvertTexture：</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>1.bool ConvertTexture(Texture src, Texture dst);<br>2.bool ConvertTexture(Texture src, int srcElement, Texture dst, int dstElement);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　把src转换成其他格式或尺寸，但目标纹理不能是压缩类格式，成功返回true，对第2个声明的使用不了解，网上没多少例子。</div><div class="line">　　This function provides an efficient way to convert between textures of different formats and dimensions. </div><div class="line">　　The destination texture format should be uncompressed and correspond to a supported RenderTextureFormat.</div><div class="line">　　支持的格式有Currently supported are 2d and cubemap textures as the source, and 2d, cubemap, 2d array and cubemap array textures as the destination.</div><div class="line"></div><div class="line">### 5.Graphics.CopyTexture：Copy texture contents</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>1.void CopyTexture(Texture src, Texture dst);<br>2.void CopyTexture(Texture src, int srcElement, int srcMip, Texture dst, int dstElement, int dstMip);<br>3.void CopyTexture(Texture src, int srcElement, int srcMip, int srcX, int srcY, int srcWidth, int srcHeight,<br>Texture dst, int dstElement, int dstMip, int dstX, int dstY);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">　　可以整个拷贝，也可以拷贝一部分，可以根据mipmap level拷贝</div><div class="line">　　注意：</div><div class="line">　　1.拷贝只是单纯拷贝，不会尺寸缩放</div><div class="line">　　2.源纹理和目标纹理的格式要兼容，如TextureFormat.ARGB32 和 RenderTextureFormat.ARGB32</div><div class="line">　　3.压缩类格式的源纹理的区域拷贝有限制，比如PVRTC格式只能整个原图拷贝或整个mip level拷贝，DXT, ETC格式区域拷贝必须满足：</div><div class="line">　　the region size and coordinates must be a multiple of compression block size(4 pixels for DXT)。</div><div class="line">　　4.可能2个纹理需要设为readable,因为原文这样说：</div><div class="line">　　If both source and destination textures are marked as &quot;readable&quot; , these functions copy it as well.</div><div class="line">　　5.更多平台支持信息可查CopyTextureSupport, and use SystemInfo.copyTextureSupport to check</div><div class="line"></div><div class="line"> </div><div class="line">### 6.Graphics.DrawMesh：Draw a mesh</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>1.DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, int layer, Camera camera, int submeshIndex, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows = true, Transform probeAnchor = null, bool useLightProbes = true);<br>2.void DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, int layer, Camera camera, int submeshIndex, MaterialPropertyBlock properties, Rendering.ShadowCastingMode castShadows, bool receiveShadows = true, Transform probeAnchor = null, bool useLightProbes = true);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　　DrawMesh不需要生成模型，不用管理大量gameobject，直接绘制网格（一般而言，我们是在hierarchy生成gobj，然后unity渲染gobj的底层就调用drawmesh，我们直接调用下面的渲染接口，更高效，所以Use DrawMesh in situations where you want to draw large amount of meshes）</div><div class="line">　　mesh是将要绘制的Mesh，position是位置，rota是朝向，mat是渲染选择的材质，layer是mesh的layer，camera是渲染到哪个摄像机(null是所有)，subMeshIndex和materialIndex表示绘制哪个子网格（每个子网格对应一个材质）参考本文档第4大点；properties也是很重要的，因为drawmesh是延时的，drawmesh之前设置mat的参数是不能及时生效的，所以如果多个mesh公用一个mat，就乱了，这个参数就是用来解决这个问题的，多个mesh公用一个mat但参数不同；</div><div class="line">　　castShadows,receiveShadows,useLightProbes,表示drawMesh得到的mesh是受光照影响的，几乎等同于场景内一个普通模型；</div><div class="line">　　probeAnchor(如果使用光照探头，这个Tranform的位置就是用来采样光照探头的地方并 find the matching reflection probe)</div><div class="line">　　matrix是combines position, rotation and other transformations。</div><div class="line">　　DrawMesh是必须一帧绘制一次，一般在Update里调用，消耗的资源主要是从调用到渲染帧结束期间需要分配资源，性能大致测试过，应该没问题</div><div class="line"></div><div class="line">### 7.Graphics.DrawMeshNow：Draw a mesh immediately，Currently set shader and material (use Material.SetPass) will be used</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>void DrawMeshNow(Mesh mesh, Vector3 position, Quaternion rotation, int materialIndex);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　立即绘制网格，不受光照影响，不是每帧调用，只在OnPostRender中调用，这个OnPostRender必须挂在Camera才有效：</div></pre></td></tr></table></figure></p>
+<p>public Mesh mesh;<br>public Material mat;<br>public void OnPostRender() {<br>    // set first shader pass of the material，必须设置，不然没材质渲染网格<br>    mat.SetPass(0);<br>    // draw mesh at the origin<br>    Graphics.DrawMeshNow(mesh, Vector3.zero, Quaternion.identity);<br>}<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">### 8.Graphics.DrawMeshInstanced：Draw the same mesh multiple times using GPU instancing</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>　　void DrawMeshInstanced(Mesh mesh, int submeshIndex, Material material, Matrix4x4[] matrices, int count = matrices.Length, MaterialPropertyBlock properties = null, Rendering.ShadowCastingMode castShadows = ShadowCastingMode.On, bool receiveShadows = true, int layer = 0, Camera camera = null);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">　　matrices数组是不同网格的transform数组，其他的类似drawmesh</div><div class="line">　　DrawMeshInstanced和DrawMesh很像，每帧调用一次，不生成gobj直接绘制网格，在需要绘制大量相同的网格(相同材质/不同材质参数/不同Transform参数)时调用</div><div class="line">　　材质的shader需要using an instanced shader,material 必须设置Material.enableInstancing为true，需要硬件支持：See SystemInfo.supportsInstancing</div><div class="line">　　此外，还有其他限制：</div><div class="line">　　1.使用Lightmap的物体</div><div class="line">　　2.受不同Light Probe / Reflection Probe影响的物体</div><div class="line">　　3.使用包含多个Pass的Shader的物体，只有第一个Pass可以Instancing前向渲染时，受多个光源影响的物体只有Base Pass可以instancing，Add Passes不行</div><div class="line">　　值得注意的是，only draw a maximum of 1023 instances at once，并且因为用了GPU Instance技术，所以（应该是不走通用渲染管线流程了）：</div><div class="line">　　Meshes are not further culled by the view frustum or baked occluders, nor sorted for transparency or z efficiency</div><div class="line">### 9.MaterialPropertyBlock：A block of material values to apply</div><div class="line">　　这个不是接口，但和6,8关联很大，所以拉出了溜溜，is used by Graphics.DrawMesh/DrawMeshInstanced and Renderer.SetPropertyBlock.</div><div class="line">　　block的传递是拷贝的方式的，所以最高效的使用方式是只定义一个，使用时设置一下传给函数：</div><div class="line">　　the most efficient way of using it is to create one block and reuse it for all DrawMesh calls</div><div class="line">　　对drawMesh一般是用setfloat等完成一次设置，然后drawmesh一次，但DrawMeshInstanced则不同，因为物体有很多，所以需要用setfloatarray，然后在shader里面应该也处理一下（没看过instance shader，不了解），这样每个mesh都对应不同参数了。</div><div class="line">　　另外，block的方式改变材质参数比直接材质set参数要高效：http://www.jianshu.com/p/eff18c57fa42</div><div class="line"></div><div class="line">### 10.Graphics.DrawMeshInstancedIndirect：Draw the same mesh multiple times using GPU instancing</div><div class="line">　　声明：</div><div class="line">　　void DrawMeshInstancedIndirect(Mesh mesh, int submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, int argsOffset = 0, MaterialPropertyBlock properties = null, Rendering.ShadowCastingMode castShadows = ShadowCastingMode.On, bool receiveShadows = true, int layer = 0, Camera camera = null);</div><div class="line">　　和这个DrawMeshInstanced类似，但没有上限1024的限制</div><div class="line">　　bufferWithArgs：需要绘制的每个mesh的顶点数，总mesh数，和3个location(需要测试才知道作用)，通过bufferWithArgs.SetData(int[] args)填充buffer</div><div class="line">　　argsOffset：填充bufferWithArgs时从Int[]参数的第offset个下标开始读，并且连续读5个（分别对应每个mesh顶点数、mesh数、3个location），offset的作用应该是为了方便给不同次调用DrawMeshInstancedIndirect填充不同参数；</div><div class="line">　　那各个mesh的transform信息呢？这个需要通过另外一个ComputerBuffer来完成：</div></pre></td></tr></table></figure></p>
+<p>positionBuffer = new ComputeBuffer(instanceCount, 16);<br>Vector4[] positions = new Vector4[instanceCount];<br>for (int i=0; i &lt; instanceCount; i++) {<br>    float angle = Random.Range(0.0f, Mathf.PI <em> 2.0f);<br>    float distance = Random.Range(20.0f, 100.0f);<br>    float height = Random.Range(-2.0f, 2.0f);<br>    float size = Random.Range(0.05f, 0.25f);<br>    positions[i] = new Vector4(Mathf.Sin(angle) </em> distance, height, Mathf.Cos(angle) * distance, size);<br>}<br>positionBuffer.SetData(positions);<br>material.SetBuffer(“positionBuffer”, positionBuffer);<br>// Render<br>Graphics.DrawMeshInstancedIndirect(mesh,0,material,new Bounds(Vector3.zero, new Vector3(100.0f, 100.0f, 100.0f)),argsBuffer);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">	注意，为了读取到positionBuffer传进来的数据，该材质使用的shader必须是特殊定制的</div><div class="line">### 11.Graphics.DrawProcedural：Draws a fully procedural geometry on the GPU</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>　　void DrawProcedural(MeshTopology topology, int vertexCount, int instanceCount = 1);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">　　Procedural：程序上的</div><div class="line">　　DrawProcedural does a draw call on the GPU, without any vertex or index buffers</div><div class="line">　　文档说要sm4.5才能用，因为sm4.5才给用户任意读取computerbuffer buffers中的数据，</div><div class="line">　　这个接口和DrawMeshNow有点类似，使用当前active rt作为输出，使用当前mat.pass作为材质渲染，但不需要输入顶点数据（从computerbuffer读）</div><div class="line">　　It uses currently set render target, transformation matrices and currently set shader pass</div><div class="line">　　要先学ComputerBuffer才能知道怎么使用，先仅止了解。</div><div class="line">　　PS：</div><div class="line">　　The amount of geometry to draw is read from a ComputeBuffer. </div><div class="line">　　Typical use case is generating arbitrary amount of data from a ComputeShader and then rendering that, without requiring a readback to the CPU（直接使用computershader的数据进行渲染，即在gpu那边快速完成）</div><div class="line">　　是否支持：SystemInfo.supportsComputeShaders</div><div class="line"></div><div class="line">### 12.DrawProceduralIndirect：和Graphics.DrawProcedural类似</div><div class="line"></div><div class="line"> </div><div class="line">### 13.Graphics.DrawTexture：Draw a texture in screen coordinates.</div><div class="line">　　声明：</div></pre></td></tr></table></figure></p>
+<p>　　void DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Color color, Material mat = null, int pass = -1);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　screenRect是绘制到屏幕的区域，单位是像素，(0,0)是左上角；sourceRect是读取源纹理的区域，是归一化坐标，(0,0)代表左下角；那些border类似九宫格的原图=》拉伸后的图保留的不拉伸区域；color影响顶点颜色；mat用来渲染tex，null则使用默认的；pass，-1则使用mat 的 all passes</div><div class="line"></div><div class="line">### 14.Graphics.ExecuteCommandBuffer：Execute a command buffer</div><div class="line">声明：</div></pre></td></tr></table></figure></p>
+<p>　　void ExecuteCommandBuffer(Rendering.CommandBuffer buffer);<br>```<br>　　看看commandbuffer先，可不简单。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Unity/" rel="tag">#Unity</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/20/Android版本号/" rel="next">Android版本号</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div>
+      
+        <style type="text/css">
+
+    .donate_bar {
+        text-align: center;
+        margin-top : 5%;
+    }
+
+    .donate_bar.hidden {
+        display:none;
+    }
+/*
+    .donate_bar a.btn_donate {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        margin-left:auto;
+        margin-right:auto;
+
+        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+        _background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat; 
+
+        -webkit-transition: background 0s;
+        -moz-transition: background 0s;
+        -o-transition: background 0s;
+        -ms-transition: background 0s;
+        transition: background 0s;
+    }
+*/
+    .donate_bar a.btn_donate:hover { 
+        // background-position: 0px -82px;
+        color: #87daff;
+    }
+
+    .donate_bar .donate_txt {
+        display: block;
+        color: #9d9d9d;
+        font: 14px/2 "Microsoft Yahei";
+    }
+
+    .bold { 
+        font-weight: bold; 
+    }
+
+    .post-donate a {
+        border-bottom: 0px;
+    }
+
+    #donate_guide table {
+        border: none;
+    }
+
+    #donate_guide td {
+        border-bottom: none;
+        border-right: none;
+        // background: #333333;
+        valign: top;
+    }
+
+</style>
+
+
+
+    
+
+    <div class ="post-donate">
+        <div id="donate_board" class="donate_bar center">
+              <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">赏</a>
+              <span id="donate_txt" class="donate_txt">
+                   
+                        仅仅是一个功能
+                   
+              </span>
+            <br>
+        </div>  
+  
+        <div id="donate_guide" class="donate_bar center hidden">
+            <!--
+            
+                <a href="http://wx4.sinaimg.cn/mw690/be3bd685ly1fjbht7nb9rj20ng0ng76c.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                    style="float:left;margin-left:25%;margin-right:10px;">
+                    <img src="http://wx4.sinaimg.cn/mw690/be3bd685ly1fjbht7nb9rj20ng0ng76c.jpg" title="" height="164px" width="164px">
+                </a> 
+              
+
+            
+                <a href="http://wx3.sinaimg.cn/mw690/be3bd685ly1fjbht756pyj20ng0ngdia.jpg" title="微信打赏" class="fancybox" rel="article0"
+                    style="margin-right:30%">
+                    <img src="http://wx3.sinaimg.cn/mw690/be3bd685ly1fjbht756pyj20ng0ngdia.jpg" title="" height="164px" width="164px">
+                </a>
+            
+            -->
+            <table>
+                <tr>
+                    <td>
+                        
+                            <a href="http://wx4.sinaimg.cn/mw690/be3bd685ly1fjbht7nb9rj20ng0ng76c.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                                style="float:left;margin-left:25%;margin-right:10px;">
+                                <img src="http://wx4.sinaimg.cn/mw690/be3bd685ly1fjbht7nb9rj20ng0ng76c.jpg" title="" height="164px" width="164px">
+                            </a> 
+                         
+                    </td>
+                    <td>
+                        
+                            <a href="http://wx3.sinaimg.cn/mw690/be3bd685ly1fjbht756pyj20ng0ngdia.jpg" title="微信打赏" class="fancybox" rel="article0"
+                                style="margin-right:30%">
+                                <img src="http://wx3.sinaimg.cn/mw690/be3bd685ly1fjbht756pyj20ng0ngdia.jpg" title="" height="164px" width="164px">
+                            </a>
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+                $('#donate_board').addClass('hidden');
+                // $('#donate_guide').removeClass('hidden');
+                $('#donate_guide').show(2000);
+            }
+
+        </script>
+    </div>
+
+    
+
+
+      
+    </div>
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+				<div id="lv-container" data-id="city" data-uid="MTAyMC8zMDgxOC83Mzcw"></div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://wx4.sinaimg.cn/large/be3bd685ly1fjbc04ife2j20hs0hs0t3.jpg" alt="古阳" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">古阳</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">春江潮水连海平，海上明月共潮生</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        <div class="links-of-friendly motion-element">
+          
+        </div>
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Graphics-Blit：Copies-source-texture-into-destination-render-texture-with-a-shader"><span class="nav-number">1.</span> <span class="nav-text">1.Graphics.Blit：Copies source texture into destination render texture with a shader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Graphics-SetRenderTarget：Sets-current-render-target"><span class="nav-number">2.</span> <span class="nav-text">2.Graphics.SetRenderTarget：Sets current render target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Graphics-BlitMultiTap：Copies-source-texture-into-destination-for-multi-tap-shader"><span class="nav-number">3.</span> <span class="nav-text">3.Graphics.BlitMultiTap：Copies source texture into destination, for multi-tap shader</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2018
+  </span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">古阳
+  </span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">Mala</a>
+</div>
+
+<!-- busuanzi -->
+
+  <div class="">
+    <div class="theme-info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<a class="theme-link"><span id="busuanzi_value_site_pv"></span></a>次
+    </span>
+</div>
+  </div>
+
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+    
+    
+
+
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+  
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
