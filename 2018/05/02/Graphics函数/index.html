@@ -45,7 +45,7 @@
 <meta property="og:site_name" content="keefor personal">
 <meta property="og:description" content="原地址 http://www.bubuko.com/infodetail-2385530.html 1.Graphics.Blit：Copies source texture into destination render texture with a shader　　声明：121.public static void Blit(Texture source, RenderTexture dest">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T05:51:08.747Z">
+<meta property="og:updated_time" content="2018-05-08T05:53:21.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graphics函数">
 <meta name="twitter:description" content="原地址 http://www.bubuko.com/infodetail-2385530.html 1.Graphics.Blit：Copies source texture into destination render texture with a shader　　声明：121.public static void Blit(Texture source, RenderTexture dest">
@@ -215,8 +215,8 @@
 <h3 id="2-Graphics-SetRenderTarget：Sets-current-render-target"><a href="#2-Graphics-SetRenderTarget：Sets-current-render-target" class="headerlink" title="2.Graphics.SetRenderTarget：Sets current render target"></a>2.Graphics.SetRenderTarget：Sets current render target</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.SetRenderTarget(RenderTexture rt, int mipLevel(缺省), CubemapFace face(缺省), int depthSlice(缺省));</div><div class="line">2.SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, int mipLevel(缺省), CubemapFace face(缺省), int depthSlice(缺省));</div><div class="line">3.SetRenderTarget(RenderBuffer[] colorBuffers, RenderBuffer depthBuffer);</div></pre></td></tr></table></figure></p>
 <p>　　SetRenderTarget的作用是把gpu渲染的中间纹理或最终纹理输出到这个函数的参数中！有点像向GPU索取数据。<br>　　<br>SetRenderTarget(RenderTexture rt）和 RenderTexture.active = rt作用一样，都是把渲染的结果存到rt中，如果为null则输出到屏幕，如果只是想要某个camera的渲染结果，用Camera.targetTexture=rt代替。<br>　　<br>输出到rt或者colorBuffer区别应该不大，只是接收数据的数据结构不同，毕竟RenderBuffer是RenderTexture中存储RGB图和深度图数据的缓存格式，<br>　　<br>RenderTexture.colorBuffer就是RenderBuffer格式。一般我们可以看到输入的RenderBuffer也是先定义一个RT，然后取其rb类型变量colorBuffer来输入。<br>　　<br>特别地，第3个声明用来搞MRT，就是一个渲染输出多个纹理数据到buffers中，可以用这些buffers来输出多个图片或者用来做多样后期效果。可以参考<br>　　<br>以前关于MRT的笔记或这篇博文：<a href="http://blog.csdn.net/ylbs110/article/details/53457576" target="_blank" rel="external">http://blog.csdn.net/ylbs110/article/details/53457576</a></p>
 <h3 id="3-Graphics-BlitMultiTap：Copies-source-texture-into-destination-for-multi-tap-shader"><a href="#3-Graphics-BlitMultiTap：Copies-source-texture-into-destination-for-multi-tap-shader" class="headerlink" title="3.Graphics.BlitMultiTap：Copies source texture into destination, for multi-tap shader"></a>3.Graphics.BlitMultiTap：Copies source texture into destination, for multi-tap shader</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">void BlitMultiTap(Texture source, RenderTexture dest, Material mat, params Vector2[] offsets);</div></pre></td></tr></table></figure></p>
-<pre><code>一般用来做post-processing effect，比如模糊。和Blit类似，特别地，offsets数组表示顶点纹理采样时的纹理坐标偏移，多个offsets就采样结果混合，比如模糊源纹理时可以offsets:new Vector2(-off,-off),new Vector2(off,-off),new Vector2(-off,off),new Vector2(off,off)，这个off是像素单位的。
-</code></pre><h3 id="4-Graphics-ConvertTexture："><a href="#4-Graphics-ConvertTexture：" class="headerlink" title="4.Graphics.ConvertTexture："></a>4.Graphics.ConvertTexture：</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.bool ConvertTexture(Texture src, Texture dst);</div><div class="line">2.bool ConvertTexture(Texture src, int srcElement, Texture dst, int dstElement);</div></pre></td></tr></table></figure></p>
+<p>一般用来做post-processing effect，比如模糊。和Blit类似，特别地，offsets数组表示顶点纹理采样时的纹理坐标偏移，多个offsets就采样结果混合，比如模糊源纹理时可以offsets:new Vector2(-off,-off),new Vector2(off,-off),new Vector2(-off,off),new Vector2(off,off)，这个off是像素单位的。</p>
+<h3 id="4-Graphics-ConvertTexture："><a href="#4-Graphics-ConvertTexture：" class="headerlink" title="4.Graphics.ConvertTexture："></a>4.Graphics.ConvertTexture：</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.bool ConvertTexture(Texture src, Texture dst);</div><div class="line">2.bool ConvertTexture(Texture src, int srcElement, Texture dst, int dstElement);</div></pre></td></tr></table></figure></p>
 <p>　　把src转换成其他格式或尺寸，但目标纹理不能是压缩类格式，成功返回true，对第2个声明的使用不了解，网上没多少例子。<br>　　<br>This function provides an efficient way to convert between textures of different formats and dimensions.<br>　　<br>The destination texture format should be uncompressed and correspond to a supported RenderTextureFormat.<br>　　<br>支持的格式有Currently supported are 2d and cubemap textures as the source, and 2d, cubemap, 2d array and cubemap array textures as the destination.</p>
 <h3 id="5-Graphics-CopyTexture：Copy-texture-contents"><a href="#5-Graphics-CopyTexture：Copy-texture-contents" class="headerlink" title="5.Graphics.CopyTexture：Copy texture contents"></a>5.Graphics.CopyTexture：Copy texture contents</h3><p>　　声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.void CopyTexture(Texture src, Texture dst);</div><div class="line">2.void CopyTexture(Texture src, int srcElement, int srcMip, Texture dst, int dstElement, int dstMip);</div><div class="line">3.void CopyTexture(Texture src, int srcElement, int srcMip, int srcX, int srcY, int srcWidth, int srcHeight, </div><div class="line">Texture dst, int dstElement, int dstMip, int dstX, int dstY);</div></pre></td></tr></table></figure></p>
 <p>　　可以整个拷贝，也可以拷贝一部分，可以根据mipmap level拷贝<br>　　<br>注意：<br>　　1.拷贝只是单纯拷贝，不会尺寸缩放</p>
@@ -284,6 +284,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/21/Unity IntPtr图片加载/" rel="prev">Unity IntPtr图片加载</a>
             
           </div>
 
@@ -485,7 +487,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
