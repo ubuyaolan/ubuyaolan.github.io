@@ -37,17 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的(源码)[https://blog.csdn.net/earbao/article/details/50731616]，这个博客">
+<meta name="description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的源码，这个博客提供的源码很坑，引用到sun这个包，这个包在Android里是没有的，是jdk文件夹（jdk1.8.0_151\j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apk签名有趣经历">
 <meta property="og:url" content="http://yoursite.com/2018/09/04/APK签名有趣经历/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的(源码)[https://blog.csdn.net/earbao/article/details/50731616]，这个博客">
+<meta property="og:description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的源码，这个博客提供的源码很坑，引用到sun这个包，这个包在Android里是没有的，是jdk文件夹（jdk1.8.0_151\j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T02:28:58.837Z">
+<meta property="og:updated_time" content="2018-09-07T11:52:41.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apk签名有趣经历">
-<meta name="twitter:description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的(源码)[https://blog.csdn.net/earbao/article/details/50731616]，这个博客">
+<meta name="twitter:description" content="通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。 我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的源码，这个博客提供的源码很坑，引用到sun这个包，这个包在Android里是没有的，是jdk文件夹（jdk1.8.0_151\j">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -203,11 +203,11 @@
 
       
         <span itemprop="articleBody"><p>通过在网上查找app签名的方法，看到有jarsinger和signapk，这两个都可以个apk签名，但是jarsigner是Windows下。exe执行。</p>
-<p>我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的(源码)[<a href="https://blog.csdn.net/earbao/article/details/50731616]，" target="_blank" rel="external">https://blog.csdn.net/earbao/article/details/50731616]，</a><br>这个博客提供的源码很坑，引用到sun这个包，这个包在Android里是没有的，是jdk文件夹（jdk1.8.0_151\jre\lib\rt.jar size:62M ）下面的一个rt.jar包里的。</p>
+<p>我要在手机上签名，这个明显不可行，然后找到signapk，这个是一个jar包，应该有戏，然后找到这个signapk的<a href="https://blog.csdn.net/earbao/article/details/50731616" target="_blank" rel="external">源码</a>，<br>这个博客提供的源码很坑，引用到sun这个包，这个包在Android里是没有的，是jdk文件夹（jdk1.8.0_151\jre\lib\rt.jar size:62M ）下面的一个rt.jar包里的。</p>
 <p>看到网上好像是说这个包没有被解压到哪儿，总之就是android不能用，然后就想着去提取里面我用到的文件主要是sun.security.pkcs、sun.security、sun.misc以及。。。</p>
 <p>在CSDN上我找到了这个包的源代码，但是越添加越发现这个引用根本没有尽头，包里的引用错综复杂，环环相扣啊。于是放弃了这个做法。<br>之后采用另一种方法，看看别人怎么做的，最好是能用他们的源码（就是这么懒）</p>
 <p>总共用过两个可以签名的app一个zipsigner还有一个apkcrack。之前看到apkcrack作者的qq发现是个学生，本还想加好友聊聊，没想到根本不理我。<br> 通过反编译，apkcrack做了混淆，zipsigner比较友好没做混淆。然后想通过直接把他的jar包提取出来，通过传递参数直接使用它里面的类。</p>
-<p> 但是发现一个比较不同的东西，它里面的包名org.spongycastle，看着像是某个开源的东西，然后搜素这个包名却看到了这个(网址)[<a href="https://blog.csdn.net/u011024652/article/details/53520728" target="_blank" rel="external">https://blog.csdn.net/u011024652/article/details/53520728</a>]<br>好像是说 使用Bouncy Castle生成数字签名 ，看着和签名有关然后又搜索了Bouncy Castle，发现了(这个帖子)[<a href="https://www.jb51.net/article/79896.htm]、(以及这个)[https://blog.csdn.net/u010657219/article/details/48573785" target="_blank" rel="external">https://www.jb51.net/article/79896.htm]、(以及这个)[https://blog.csdn.net/u010657219/article/details/48573785</a>]</p>
+<p> 但是发现一个比较不同的东西，它里面的包名org.spongycastle，看着像是某个开源的东西，然后搜素这个包名却看到了这个<a href="https://blog.csdn.net/u011024652/article/details/53520728" target="_blank" rel="external">网址</a><br>好像是说 使用Bouncy Castle生成数字签名 ，看着和签名有关然后又搜索了Bouncy Castle，发现了<a href="https://www.jb51.net/article/79896.htm" target="_blank" rel="external">这个帖子</a>、<a href="https://blog.csdn.net/u010657219/article/details/48573785" target="_blank" rel="external">以及这个</a></p>
 <p>两个帖子差不都，都是解析apk签名，也是用的SignApk，但是代码和我之前找的那个代码不同，准确说是在生成.rsa文件这一步不一样，帖子里提了一句</p>
 <blockquote>
 <p>“使用了开源库bouncycastle来签名”</p>
@@ -217,8 +217,8 @@
 <p>“bouncy castle(轻量级密码术包)是一种用于 Java 平台的开放源码的轻量级密码术包;它支持大量的密码术算法”</p>
 </blockquote>
 <p>好了到这我是看明白了，SignApk有两种写法，一种是使用sun.security，另一种是使用bouncycastle，不知道哪个写法先出来的，哪个写法后出来的。总之又将希望寄托于这个使用bouncycastle的Signapk上了。</p>
-<p>然后对照上面提的那两个帖子把现有的SignApk的写。rsa这一步改了。在网上找bouncycastle包，很多都不对。最后看到(这个帖子)[<a href="https://blog.csdn.net/ytmfdw/article/details/45060471" target="_blank" rel="external">https://blog.csdn.net/ytmfdw/article/details/45060471</a>]</p>
-<p>使用和上面说的那两个帖子相同的签名写法，并且提供案例下载。好了，通过把他的案例反编译，提取了(bouncycastle-bcpkix-host.jar和bouncycastle-host.jar)[<a href="https://download.csdn.net/download/ubuyaolan/10644238],放到项目里，完美运行。" target="_blank" rel="external">https://download.csdn.net/download/ubuyaolan/10644238],放到项目里，完美运行。</a></p>
+<p>然后对照上面提的那两个帖子把现有的SignApk的写。rsa这一步改了。在网上找bouncycastle包，很多都不对。最后看到<a href="https://blog.csdn.net/ytmfdw/article/details/45060471" target="_blank" rel="external">这个帖子</a></p>
+<p>使用和上面说的那两个帖子相同的签名写法，并且提供案例下载。好了，通过把他的案例反编译，提取了<a href="https://download.csdn.net/download/ubuyaolan/10644238" target="_blank" rel="external">bouncycastle-bcpkix-host.jar和bouncycastle-host.jar</a>,放到项目里，完美运行。</p>
 </span>
       
     </div>

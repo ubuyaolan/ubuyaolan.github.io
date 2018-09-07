@@ -37,17 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个(这个帖子)[https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox]讲解,基于(这个项目)[https://github.com/fourbrother/parse_and">
+<meta name="description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个这个帖子讲解,基于这个项目修改. 上述帖子以及项目是解析resources.arsc,已经都解析出来了，修改还是问题吗？在此基础上稍加进行修改就可以了。 但是在上述帖子中StringPool讲解不是很详细，对于字符串前两个字节，第一个字节字符长度，第二字节是字符串的字节长">
 <meta property="og:type" content="article">
 <meta property="og:title" content="修改APP名字">
 <meta property="og:url" content="http://yoursite.com/2018/09/04/APK修改名字/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个(这个帖子)[https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox]讲解,基于(这个项目)[https://github.com/fourbrother/parse_and">
+<meta property="og:description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个这个帖子讲解,基于这个项目修改. 上述帖子以及项目是解析resources.arsc,已经都解析出来了，修改还是问题吗？在此基础上稍加进行修改就可以了。 但是在上述帖子中StringPool讲解不是很详细，对于字符串前两个字节，第一个字节字符长度，第二字节是字符串的字节长">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T02:45:02.729Z">
+<meta property="og:updated_time" content="2018-09-07T11:53:42.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改APP名字">
-<meta name="twitter:description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个(这个帖子)[https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox]讲解,基于(这个项目)[https://github.com/fourbrother/parse_and">
+<meta name="twitter:description" content="涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字主要参考这个这个帖子讲解,基于这个项目修改. 上述帖子以及项目是解析resources.arsc,已经都解析出来了，修改还是问题吗？在此基础上稍加进行修改就可以了。 但是在上述帖子中StringPool讲解不是很详细，对于字符串前两个字节，第一个字节字符长度，第二字节是字符串的字节长">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -202,11 +202,11 @@
       
 
       
-        <span itemprop="articleBody"><p>涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字<br>主要参考这个(这个帖子)[<a href="https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox]讲解,基于(这个项目)[https://github.com/fourbrother/parse_androidarsc]修改" target="_blank" rel="external">https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox]讲解,基于(这个项目)[https://github.com/fourbrother/parse_androidarsc]修改</a>.</p>
+        <span itemprop="articleBody"><p>涉及到Android逆向工程，主要时通过修改resources.arsc里stringpool里的字段修改app名字<br>主要参考这个<a href="https://blog.csdn.net/jiangwei0910410003/article/details/50628894#commentBox" target="_blank" rel="external">这个帖子</a>讲解,基于<a href="https://github.com/fourbrother/parse_androidarsc" target="_blank" rel="external">这个项目</a>修改.</p>
 <p>上述帖子以及项目是解析resources.arsc,已经都解析出来了，修改还是问题吗？在此基础上稍加进行修改就可以了。</p>
 <p>但是在上述帖子中StringPool讲解不是很详细，对于字符串前两个字节，第一个字节字符长度，第二字节是字符串的字节长度。</p>
 <p>举个例子:<br>hello 字节长度5，字符串长度5.<br>你好 字节长度6，字符串长度2</p>
-<p>关于汉字的长度，(这个帖子)[<a href="https://www.cnblogs.com/lslk89/p/6898526.html]讲的很详细" target="_blank" rel="external">https://www.cnblogs.com/lslk89/p/6898526.html]讲的很详细</a>,</p>
+<p>关于汉字的长度，<a href="https://www.cnblogs.com/lslk89/p/6898526.html" target="_blank" rel="external">这个帖子</a>讲的很详细,</p>
 <p>还有一点很重要，里面没有讲。StringPool的结束位置必须是4的倍数，如果不够用零来补，并且补零的长度要加到stringpool的chunk大小里。<br>这里有一个工具对于逆向工程很有用，010Editor。查看Hex很方便，之前使用的notepad++的插件Hex-Editor很坑。</p>
 </span>
       
