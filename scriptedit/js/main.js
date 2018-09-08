@@ -13,10 +13,6 @@ $(document).ready(function(){
 	$(".fitscreen").css("height", fitscreen);
 
 	
-	 $.getJSON("version", function (data){
-        $("#downloadapp").attr("href",data.url);
-    }) 
-
 
 
   // Mobile Navigation

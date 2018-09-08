@@ -108,9 +108,17 @@ All rights reserved
 			</footer>	
 			<!-- End footer Area -->	
 
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!--<script src="js/jquery.ajaxchimp.min.js"></script>-->
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<!--<script src="js/jquery.ajaxchimp.min.js"></script>-->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.getJSON("version", function (data){
+					$("#downloadapp").attr("href",data.url);
+				});
+			});
+		</script>
 			<script src="js/main.js"></script>	
 		</body>
 	</html>
