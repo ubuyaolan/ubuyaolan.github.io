@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Unity,Spine," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,18 +37,14 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3在界面上点击按钮，场景中的2D模型出现有相应动画，动画播放结束后2D模型动画状态重置并且模型消失。然而每次点击时，都会有上一次动画的残影出现。 在Spine插件的教程显示。每次动画播放前执行SkeletonAnimation.state.ClearTracks();可消除残影。经尝试此方法对于该项目">
-<meta name="keywords" content="Unity,Spine">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spine 动画残影">
-<meta property="og:url" content="http://yoursite.com/2017/09/03/Spine 动画残影/index.html">
+<meta property="og:title" content="剧本编辑器帮助">
+<meta property="og:url" content="http://yoursite.com/2018/09/08/剧本编辑器帮助/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3在界面上点击按钮，场景中的2D模型出现有相应动画，动画播放结束后2D模型动画状态重置并且模型消失。然而每次点击时，都会有上一次动画的残影出现。 在Spine插件的教程显示。每次动画播放前执行SkeletonAnimation.state.ClearTracks();可消除残影。经尝试此方法对于该项目">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T05:34:30.000Z">
+<meta property="og:updated_time" content="2018-09-08T05:53:43.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spine 动画残影">
-<meta name="twitter:description" content="FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3在界面上点击按钮，场景中的2D模型出现有相应动画，动画播放结束后2D模型动画状态重置并且模型消失。然而每次点击时，都会有上一次动画的残影出现。 在Spine插件的教程显示。每次动画播放前执行SkeletonAnimation.state.ClearTracks();可消除残影。经尝试此方法对于该项目">
+<meta name="twitter:title" content="剧本编辑器帮助">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +54,7 @@
   };
 </script>
 
-  <title> Spine 动画残影 | keefor personal </title>
+  <title> 剧本编辑器帮助 | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +171,7 @@
           
           
             
-              Spine 动画残影
+              剧本编辑器帮助
             
           
         </h1>
@@ -184,8 +180,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-09-03T10:30:13+08:00" content="2017-09-03">
-            2017-09-03
+          <time itemprop="dateCreated" datetime="2018-09-08T13:16:41+08:00" content="2018-09-08">
+            2018-09-08
           </time>
         </span>
 
@@ -203,36 +199,23 @@
       
 
       
-        <span itemprop="articleBody"><h6 id="FairyGUI-1-4-3-SpineToUnity-3-5-x-x-Unity5-2-3"><a href="#FairyGUI-1-4-3-SpineToUnity-3-5-x-x-Unity5-2-3" class="headerlink" title="FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3"></a>FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3</h6><p>在界面上点击按钮，场景中的2D模型出现有相应动画，动画播放结束后2D模型动画状态重置并且模型消失。<br>然而每次点击时，都会有上一次动画的残影出现。</p>
-<p>在Spine插件的教程显示。每次动画播放前执行SkeletonAnimation.state.ClearTracks();可消除残影。<br>经尝试此方法对于该项目无效。</p>
-<p>经多次问题排查后，发现，使用Unity原生GUI.Button控制动画无残影出现，使用FairyGUI 才会出现残影。<br>问题不是在Spine，而是在所使用的FairyGUI。FairyGUI作者告知，FairyGUI按钮事件是在LateUpdate里执行。</p>
-<p>最终选择的解决方法：将2D模型在看不见的地方显示出来并且播放动画，下一帧再将模型放到可见的位置。</p>
+        <span itemprop="articleBody"><video id="video" controls preload="none" poster="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.jpg"><br>      <source id="mp4" src="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4" type="video/mp4"><br>      </video>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Unity/" rel="tag">#Unity</a>
-          
-            <a href="/tags/Spine/" rel="tag">#Spine</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/04/AR场景无阴影/" rel="prev">AR场景无阴影</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/05/第一次写博/" rel="next">第一次写博</a>
+              <a href="/2018/09/04/APK修改名字/" rel="next">修改APP名字</a>
             
           </div>
         </div>
@@ -470,7 +453,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#FairyGUI-1-4-3-SpineToUnity-3-5-x-x-Unity5-2-3"><span class="nav-number">1.</span> <span class="nav-text">FairyGUI 1.4.3 , SpineToUnity 3.5.x.x , Unity5.2.3</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

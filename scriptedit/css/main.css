@@ -97,6 +97,7 @@ a, a:focus, a:hover {
   text-decoration: none;
   outline: 0;
 }
+ .icon-bar {background-color: #EB5055}
 
 .card-panel {
   margin: 0;

@@ -12,6 +12,10 @@ $(document).ready(function(){
 	$(".fullscreen").css("height", window_height)
 	$(".fitscreen").css("height", fitscreen);
 
+	
+	 $.getJSON("version", function (data){
+        $("#downloadapp").attr("href",data.url);
+    }) 
 
 
 
@@ -94,12 +98,6 @@ $(document).ready(function(){
     }
   })
 
-
-
-
-        $(document).ready(function() {
-            $('#mc_embed_signup').find('form').ajaxChimp();
-        });      
 
 
 
