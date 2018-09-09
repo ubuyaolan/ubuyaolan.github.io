@@ -113,13 +113,35 @@ All rights reserved
 		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	
 		<script type="text/javascript">
+		
+		
 			$(document).ready(function(){
+				
+				var window_width 	 = $(window).width(),
+				window_height 		 = window.innerHeight,
+				header_height 		 = $(".default-header").height(),
+				header_height_static = $(".site-header.static").outerHeight(),
+				fitscreen 			 = window_height - header_height;
+			
+			
+				$(".fullscreen").css("height", window_height)
+				$(".fitscreen").css("height", fitscreen);
+			
 				$.getJSON("version", function (data){
 					$("#downloadapp").attr("href",data.url);
 				});
+				
+				// Header scroll class
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 100) {
+					$('#header').addClass('header-scrolled');
+					} else {
+					$('#header').removeClass('header-scrolled');
+					}
+				});
 			});
 		</script>
-			<script src="js/main.js"></script>	
+			
 		</body>
 	</html>
 
