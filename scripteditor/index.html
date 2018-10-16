@@ -1,0 +1,150 @@
+	<!DOCTYPE html>
+	<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>剧本编辑器</title>
+
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>
+
+			  <header id="header" id="home">
+			    <div class="container">
+			    	<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				      </div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          <li class="menu-active"><a href="#home">主页</a></li>
+				          <li><a href="materal/index.html">素材</a></li>
+				          <li><a href="help/index.html">帮助</a></li>
+				        </ul>
+				      </nav><!-- #nav-menu-container -->		    		
+			    	</div>
+			    </div>
+			  </header><!-- #header -->
+
+
+			<!-- start banner Area -->
+			<section class="banner-area" id="home">	
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-start">
+						<div class="banner-content col-lg-7">
+							<h5 class="text-white text-uppercase">作者: 古阳</h5>
+							<h1 class="text-uppercase">
+								剧本编辑器				
+							</h1>
+							<p class="text-white pt-20 pb-20">
+								可以在手机上编辑游戏剧本的工具 <br/> 同时可以在手机上发布该项目生成APK文件.
+							</p>
+							<a id="downloadapp" href="http://p33pv4evh.bkt.clouddn.com/scripteditor0908.apk" class="primary-btn text-uppercase">下载应用</a>
+						</div>
+						<div class="col-lg-5 banner-right">
+							<img class="img-fluid" src="img/header-img.png" alt="">
+						</div>												
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->	
+
+		
+			<!-- Start fact Area -->
+			<section class="fact-area relative section-gap" id="fact">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-40 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">应用功能介绍</h1>
+								<p>此处略去一万零伍拾一个字.</p>
+							</div>
+						</div>
+					</div>						
+				</div>	
+			</section>
+			<!-- End fact Area -->
+			
+			
+			
+
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>关于</h6>
+								<p>
+									这里我也不知道些什么，但是不写东西又显得空空的，<br/>那就随便写点撑一下布局吧，这么多字应该够了吧，我看了一下效果应该是够了
+								</p>
+								<p class="footer-text">
+								
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> 古阳
+All rights reserved 
+<br/>page made with Colorlib 
+
+								</p>								
+							</div>
+						</div>					
+					</div>
+				</div>
+			</footer>	
+			<!-- End footer Area -->	
+
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<!--<script src="js/jquery.ajaxchimp.min.js"></script>-->
+		<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	
+		<script type="text/javascript">
+		
+		
+			$(document).ready(function(){
+				
+				var window_width 	 = $(window).width(),
+				window_height 		 = window.innerHeight,
+				header_height 		 = $(".default-header").height(),
+				header_height_static = $(".site-header.static").outerHeight(),
+				fitscreen 			 = window_height - header_height;
+			
+			
+				$(".fullscreen").css("height", window_height)
+				$(".fitscreen").css("height", fitscreen);
+			
+				$.getJSON("version", function (data){
+					$("#downloadapp").attr("href",data.url);
+				});
+				
+				// Header scroll class
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 100) {
+					$('#header').addClass('header-scrolled');
+					} else {
+					$('#header').removeClass('header-scrolled');
+					}
+				});
+			});
+		</script>
+			
+		</body>
+	</html>
+
+
+
