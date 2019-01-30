@@ -45,7 +45,7 @@
 <meta property="og:site_name" content="keefor personal">
 <meta property="og:description" content="如何把已有项目提交到Git上？  这个问题已困惑我多时，今天实在忍受不了折磨，找了下资料。总结一下。 基本方法首先我是在码云上创建的Git项目，项目里就一个readme和gitignore文件。本地有个项目文件夹。 使用git bash 打开项目文件夹，然后执行下面几条语句。 123456touch README.md //新建说明文件git init //在当前项目目录中生成本地git管理,并">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T17:27:33.339Z">
+<meta property="og:updated_time" content="2019-01-11T04:29:59.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git提交已有项目">
 <meta name="twitter:description" content="如何把已有项目提交到Git上？  这个问题已困惑我多时，今天实在忍受不了折磨，找了下资料。总结一下。 基本方法首先我是在码云上创建的Git项目，项目里就一个readme和gitignore文件。本地有个项目文件夹。 使用git bash 打开项目文件夹，然后执行下面几条语句。 123456touch README.md //新建说明文件git init //在当前项目目录中生成本地git管理,并">
@@ -210,6 +210,12 @@
 <h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><p>首先我是在码云上创建的Git项目，项目里就一个readme和gitignore文件。本地有个项目文件夹。</p>
 <p>使用git bash 打开项目文件夹，然后执行下面几条语句。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">touch README.md //新建说明文件</div><div class="line">git init //在当前项目目录中生成本地git管理,并建立一个隐藏.git目录</div><div class="line">git add . //添加当前目录中的所有文件到索引</div><div class="line">git commit -m &quot;first commit&quot; //提交到本地源码库，并附加提交注释</div><div class="line">git remote add origin 粘贴复制的地址 //添加到远程项目，别名为origin</div><div class="line">git push -u origin master [第一次需要添加url不带这个括号的]//把本地源码库push到github 别名为origin的远程项目中，确认提交</div></pre></td></tr></table></figure>
+<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><ol>
+<li>在项目根目录下面创建gitignore.txt文件</li>
+<li>把你需要排除的文件名保存到gitignore.txt文件</li>
+<li>在项目根目录下面按住Shift键并邮件然后选择“在此处打开命令窗口”</li>
+<li>执行命令 ren gitignore.txt .gitignore</li>
+</ol>
 <h3 id="错误Please-tell-me-who-you-are"><a href="#错误Please-tell-me-who-you-are" class="headerlink" title="错误Please tell me who you are"></a>错误Please tell me who you are</h3><p>如果没有配置邮箱以及名字,可能提示Please tell me who you are.有两种方法可以配置邮箱以及名称</p>
 <p>全局配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.email &quot;you@example.com&quot;  </div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure></p>
 <p>单独为某个项目配置<br>1.打开项目所在目录，找到隐藏的.git文件夹。<br>2.打开文件夹里的config文件。<br>3.添加这三行到文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[user]</div><div class="line">    name = XXX(自己的名称)</div><div class="line">    email = XXXX(邮箱)</div></pre></td></tr></table></figure></p>
@@ -442,7 +448,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -484,7 +490,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本方法"><span class="nav-number">1.</span> <span class="nav-text">基本方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误Please-tell-me-who-you-are"><span class="nav-number">2.</span> <span class="nav-text">错误Please tell me who you are</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误Please-enter-a-commit-message"><span class="nav-number">3.</span> <span class="nav-text">错误Please enter a commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误failed-to-push-some-refs-to"><span class="nav-number">4.</span> <span class="nav-text">错误failed to push some refs to</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误refusing-to-merge-unrelated-histories"><span class="nav-number">5.</span> <span class="nav-text">错误refusing to merge unrelated histories</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本方法"><span class="nav-number">1.</span> <span class="nav-text">基本方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-gitignore"><span class="nav-number">2.</span> <span class="nav-text">创建.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误Please-tell-me-who-you-are"><span class="nav-number">3.</span> <span class="nav-text">错误Please tell me who you are</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误Please-enter-a-commit-message"><span class="nav-number">4.</span> <span class="nav-text">错误Please enter a commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误failed-to-push-some-refs-to"><span class="nav-number">5.</span> <span class="nav-text">错误failed to push some refs to</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误refusing-to-merge-unrelated-histories"><span class="nav-number">6.</span> <span class="nav-text">错误refusing to merge unrelated histories</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -501,7 +507,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2018
+  <span itemprop="copyrightYear">2019
   </span>
   <span class="with-love">
     <i class="icon-next-heart"></i>

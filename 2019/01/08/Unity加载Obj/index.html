@@ -37,17 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="素材正在搜集中，同时，你也可以自己制作素材， 分类素材分为这么几类  人物 地图 图片 物品 开始背景图 结束背景图 图标 启动页  规格   类型 标准 路径（不存在的直接创建就好了）     人物素材 4*4的图片矩阵，横排是动画，在移动的时候会依次执行，竖排是方向，从上到小一次是下，左，右，上 根目录/ScriptEditor/项目文件夹/image/character   地图素材 宽度8">
+<meta name="description" content="在Unity中动态保存加载.obj文件，分为两个部分，保存文件和加载文件，不过再次之前需要对.obj文件简单了解下 关于obj文件obj文件它是3D模型的文件格式，适用于3D模型之间的互导。可以直接用记事本打开查看编辑修改，它支持多边形模型，支持法线贴图坐标，但是并不记录动画等其他信息。关于材质它有相关的关联文件.mtl。它没有头文件，是由一些关键字、空格和文本字符组成的。 #表示注释行  这是注">
 <meta property="og:type" content="article">
-<meta property="og:title" content="素材">
-<meta property="og:url" content="http://yoursite.com/2018/09/08/素材/index.html">
+<meta property="og:title" content="Unity保存加载obj">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/Unity加载Obj/index.html">
 <meta property="og:site_name" content="keefor personal">
-<meta property="og:description" content="素材正在搜集中，同时，你也可以自己制作素材， 分类素材分为这么几类  人物 地图 图片 物品 开始背景图 结束背景图 图标 启动页  规格   类型 标准 路径（不存在的直接创建就好了）     人物素材 4*4的图片矩阵，横排是动画，在移动的时候会依次执行，竖排是方向，从上到小一次是下，左，右，上 根目录/ScriptEditor/项目文件夹/image/character   地图素材 宽度8">
+<meta property="og:description" content="在Unity中动态保存加载.obj文件，分为两个部分，保存文件和加载文件，不过再次之前需要对.obj文件简单了解下 关于obj文件obj文件它是3D模型的文件格式，适用于3D模型之间的互导。可以直接用记事本打开查看编辑修改，它支持多边形模型，支持法线贴图坐标，但是并不记录动画等其他信息。关于材质它有相关的关联文件.mtl。它没有头文件，是由一些关键字、空格和文本字符组成的。 #表示注释行  这是注">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-08T07:55:52.111Z">
+<meta property="og:updated_time" content="2019-01-08T04:52:21.574Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="素材">
-<meta name="twitter:description" content="素材正在搜集中，同时，你也可以自己制作素材， 分类素材分为这么几类  人物 地图 图片 物品 开始背景图 结束背景图 图标 启动页  规格   类型 标准 路径（不存在的直接创建就好了）     人物素材 4*4的图片矩阵，横排是动画，在移动的时候会依次执行，竖排是方向，从上到小一次是下，左，右，上 根目录/ScriptEditor/项目文件夹/image/character   地图素材 宽度8">
+<meta name="twitter:title" content="Unity保存加载obj">
+<meta name="twitter:description" content="在Unity中动态保存加载.obj文件，分为两个部分，保存文件和加载文件，不过再次之前需要对.obj文件简单了解下 关于obj文件obj文件它是3D模型的文件格式，适用于3D模型之间的互导。可以直接用记事本打开查看编辑修改，它支持多边形模型，支持法线贴图坐标，但是并不记录动画等其他信息。关于材质它有相关的关联文件.mtl。它没有头文件，是由一些关键字、空格和文本字符组成的。 #表示注释行  这是注">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title> 素材 | keefor personal </title>
+  <title> Unity保存加载obj | keefor personal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +174,7 @@
           
           
             
-              素材
+              Unity保存加载obj
             
           
         </h1>
@@ -183,8 +183,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2018-09-08T10:30:29+08:00" content="2018-09-08">
-            2018-09-08
+          <time itemprop="dateCreated" datetime="2019-01-08T11:41:29+08:00" content="2019-01-08">
+            2019-01-08
           </time>
         </span>
 
@@ -202,70 +202,16 @@
       
 
       
-        <span itemprop="articleBody"><p>素材正在搜集中，<br>同时，你也可以自己制作素材，</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>素材分为这么几类</p>
-<ul>
-<li>人物</li>
-<li>地图</li>
-<li>图片</li>
-<li>物品</li>
-<li>开始背景图</li>
-<li>结束背景图</li>
-<li>图标</li>
-<li>启动页</li>
-</ul>
-<h4 id="规格"><a href="#规格" class="headerlink" title="规格"></a>规格</h4><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>标准</th>
-<th>路径（不存在的直接创建就好了）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>人物素材</td>
-<td>4*4的图片矩阵，横排是动画，在移动的时候会依次执行，竖排是方向，从上到小一次是下，左，右，上</td>
-<td>根目录/ScriptEditor/项目文件夹/image/character</td>
-</tr>
-<tr>
-<td>地图素材</td>
-<td>宽度8<em>32pix，高度小于64</em>32pix</td>
-<td>根目录/ScriptEditor/项目文件夹/image/tileset</td>
-</tr>
-<tr>
-<td>图片素材</td>
-<td>不超过1024*1024（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/picture</td>
-</tr>
-<tr>
-<td>物品素材</td>
-<td>不超过32*32（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/items</td>
-</tr>
-<tr>
-<td>开始背景图</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/title</td>
-</tr>
-<tr>
-<td>结束背景图</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/over</td>
-</tr>
-<tr>
-<td>图标</td>
-<td>512*512（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/icon/icon.png（名称必须是icon.png）</td>
-</tr>
-<tr>
-<td>启动页</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/splash/splash.png（名称必须是icon.png）</td>
-</tr>
-</tbody>
-</table>
-<p>另外<br>如果你有好的素材，同时也愿意让更多的人看到，不要犹豫请发给我吧，我会在这个页面进行展示</p>
+        <span itemprop="articleBody"><p>在Unity中动态保存加载.obj文件，分为两个部分，保存文件和加载文件，不过再次之前需要对.obj文件简单了解下</p>
+<h3 id="关于obj文件"><a href="#关于obj文件" class="headerlink" title="关于obj文件"></a>关于obj文件</h3><h3 id="obj文件"><a href="#obj文件" class="headerlink" title="obj文件"></a>obj文件</h3><p>它是3D模型的文件格式，适用于3D模型之间的互导。可以直接用记事本打开查看编辑修改，它支持多边形模型，支持法线贴图坐标，<br>但是并不记录动画等其他信息。关于材质它有相关的关联文件.mtl。它没有头文件，是由一些关键字、空格和文本字符组成的。</p>
+<p>#表示注释行</p>
+<blockquote>
+<h1 id="这是注释"><a href="#这是注释" class="headerlink" title="这是注释"></a>这是注释</h1><p>mtllib表示关联的材质文件名称<br>mtllib untitled.mtl<br>usemtl表示从当前行开始到下一个usemtl之间都是用对应的材质，关键词后面跟的是材质名称<br>usemtl material<br>v即vertex，表示顶点坐标，一般有三个值，以空格分割<br>v 1.0 0.0 1.0<br>vn即vertex normal，表示法线，有三个值<br>vn 1.0 0.0 1.0<br>vt即vertex texture，表示纹理坐标也就是UV，有两个值<br>vt 0.0 1.0<br>f即face，是真正描述面的关键字，下面显示的是一个三角面，2 1 4表示三个顶点索引，1 2 3表示UV索引，1 1 1表示法线索引<br>f 2/1/1 1/2/1 4/3/1<br>上面这些信息就够用了，还有其他的关键词，在此不做详细解释。</p>
+</blockquote>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>在Unity中采用的是左手坐标系，大多数3D软件采用的是右手坐标系，所以在保存顶点坐标、法线坐标、面索引的时候，要做从左手坐标系转到右手坐标系。<br>可以对顶点坐标、法线坐标的X*-1，然后，面索引顺序由0 1 2改成1 0 2 。同样在加载的时候也要进行相应的处理。</p>
+<h3 id="保存obj"><a href="#保存obj" class="headerlink" title="保存obj"></a>保存obj</h3><p><a href="http://www.manew.com/3827.html" target="_blank" rel="external">http://www.manew.com/3827.html</a></p>
+<h3 id="加载obj"><a href="#加载obj" class="headerlink" title="加载obj"></a>加载obj</h3><p><a href="https://github.com/hammmm/unity-obj-loader/tree/master/OBJ/src" target="_blank" rel="external">https://github.com/hammmm/unity-obj-loader/tree/master/OBJ/src</a></p>
+<p>上面这两个案例可能有问题，需要参照注意事项进行修改</p>
 </span>
       
     </div>
@@ -277,13 +223,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/08/Unity加载Obj/" rel="prev">Unity保存加载obj</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/20/修改nodejs全局安装目录/" rel="next">修改npm全局安装目录</a>
+              <a href="/2018/09/08/素材/" rel="next">素材</a>
             
           </div>
         </div>
@@ -521,7 +465,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规格"><span class="nav-number">2.</span> <span class="nav-text">规格</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于obj文件"><span class="nav-number">1.</span> <span class="nav-text">关于obj文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#obj文件"><span class="nav-number">2.</span> <span class="nav-text">obj文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这是注释"><span class="nav-number"></span> <span class="nav-text">这是注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存obj"><span class="nav-number">2.</span> <span class="nav-text">保存obj</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载obj"><span class="nav-number">3.</span> <span class="nav-text">加载obj</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
