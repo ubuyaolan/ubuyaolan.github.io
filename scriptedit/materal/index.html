@@ -1,96 +1,96 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="codepixer">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>剧本编辑器</title>
-
-		</head>
-		<body>
-		
-      
-        <span itemprop="articleBody"><p>素材正在搜集中，<br>同时，你也可以自己制作素材，</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>素材分为这么几类</p>
-<ul>
-<li>人物</li>
-<li>地图</li>
-<li>图片</li>
-<li>物品</li>
-<li>开始背景图</li>
-<li>结束背景图</li>
-<li>图标</li>
-<li>启动页</li>
-</ul>
-<h4 id="规格"><a href="#规格" class="headerlink" title="规格"></a>规格</h4><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>标准</th>
-<th>路径（不存在的直接创建就好了）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>人物素材</td>
-<td>4*4的图片矩阵，横排是动画，在移动的时候会依次执行，竖排是方向，从上到小一次是下，左，右，上</td>
-<td>根目录/ScriptEditor/项目文件夹/image/character</td>
-</tr>
-<tr>
-<td>地图素材</td>
-<td>宽度8<em>32pix，高度小于64</em>32pix</td>
-<td>根目录/ScriptEditor/项目文件夹/image/tileset</td>
-</tr>
-<tr>
-<td>图片素材</td>
-<td>不超过1024*1024（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/picture</td>
-</tr>
-<tr>
-<td>物品素材</td>
-<td>不超过32*32（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/items</td>
-</tr>
-<tr>
-<td>开始背景图</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/title</td>
-</tr>
-<tr>
-<td>结束背景图</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/image/over</td>
-</tr>
-<tr>
-<td>图标</td>
-<td>512*512（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/icon/icon.png（名称必须是icon.png）</td>
-</tr>
-<tr>
-<td>启动页</td>
-<td>720*1280（建议）</td>
-<td>根目录/ScriptEditor/项目文件夹/splash/splash.png（名称必须是icon.png）</td>
-</tr>
-</tbody>
-</table>
-<p>如果你有好的素材，同时也愿意让更多的人看到，不要犹豫请发给我吧，我会在这个页面进行展示</p>
-<p>QQ交流群：472403351</p>
-</span>
-      
-    </div>
-			
-		</body>
-	</html>
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name = "viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<title>素材</title>
+</head>
+<body>
+	<div data-role ="page">
+		<div data-role ="header">
+			<h1>素材说明</h1>
+			<a href="" class="ui-btn ui-btn-right">主页</a>
+		</div>
+		<div data-role = "main" class="ui-content">
+			<h1>分类</h1>
+			<ul >
+				<li>人物</li>
+				<li>地图</li>
+				<li>图片</li>
+				<li>物品</li>
+				<li>开始背景</li>
+				<li>结束背景</li>
+				<li>图标</li>
+				<li>启动页</li>
+			</ul>
+			<h1>规格</h1>
+			<p>路径目录都是在项目文件夹下（根目录/ScriptEditor/项目文件夹）</p>
+			<table data-role="table"  data-mode="columntoggle" class="ui-responsive" data-column-btn-text="显示列">		
+				<thead>	
+					<tr>
+						<th>类型</th>
+						<th data-priority="3">标准</th>
+						<th data-priority="1">路径</th>
+						<th data-priority="5">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>人物素材</td>
+						<td>4*4的图片矩阵</td>
+						<td>/image/character</td>
+						<td>横排在移动的时候会依次执行，竖排从上到小一次是下，左，右，上</td>
+					</tr>
+					<tr>
+						<td>地图素材</td>
+						<td>宽度8<em>32pix，高度小于64</em>32pix</td>
+						<td>/image/tileset</td>
+						<td>无</td>
+					</tr>
+					<tr>
+						<td>图片素材</td>
+						<td>不超过1024*1024（建议）</td>
+						<td>/image/picture</td>
+						<td>无</td>
+					</tr>
+					<tr>
+						<td>物品素材</td>
+						<td>不超过32*32（建议）</td>
+						<td>/image/items</td>
+						<td>无</td>
+					</tr>
+					<tr>
+						<td>开始背景</td>
+						<td>720*1280（建议）</td>
+						<td>/image/title</td>
+						<td>无</td>
+					</tr>
+					<tr>
+						<td>结束背景</td>
+						<td>720*1280（建议）</td>
+						<td>/image/over</td>
+						<td>无</td>
+					</tr>
+					<tr>
+						<td>图标</td>
+						<td>512*512（建议）</td>
+						<td>/icon/icon.png</td>
+						<td>名称必须是icon.png</td>
+					</tr>
+					<tr>
+						<td>启动页</td>
+						<td>720*1280（建议）</td>
+						<td>/splash/splash.png</td>
+						<td>名称必须是splash.png</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div data-role = "footer">
+			<h1>QQ交流群：472403351</h1>
+		</div>
+	</div>
+</body>
