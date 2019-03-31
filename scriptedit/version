@@ -1,1 +1,1 @@
-{"version":"2.1.4","url":"http://download.dxfdsj.com/scriptedit_2_1_4_20190322.apk","content":"2.1.4 修复事件位置偏移、顶层显示、屏幕颠倒、始终可出售等问题，删除发布无效应用权限。无法更新用户请查看帮助","force":"n","md5":"AEF0985FCAA6214440CEC7EB63B24BD8"}
+{"version":"2.2.0","url":"","content":"2.2.0 增加调试模式下查看修改开关、变量的值；修复商店bug；修复资源丢失bug；由于服务器费用超出预算，暂停app内更新，下个月可正常使用。可到贴吧或QQ群下载","force":"n","md5":""}
