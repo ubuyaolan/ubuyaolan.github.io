@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name = "viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+	<title>留言簿</title>
+</head>
+<body>
+	<div data-role ="page">
+		<div data-role ="header">
+			<h1>留言簿</h1>
+			<a href="/scriptedit/index.html" class="ui-btn ui-btn-right">主页</a>
+		</div>
+    <div id="vcomments"></div>
+	</div>
+<script>
+        new Valine({
+            el: '#vcomments',
+			appId: 'DD98Dz2h2O3MxddMsJGaYykU-gzGzoHsz',
+			appKey: '4wy0Cf8XA3hQ3DFBuEiwxAp0'
+        });
+</script>
+</body>
