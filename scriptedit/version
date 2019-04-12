@@ -1,1 +1,1 @@
-{"version":"2.2.0","url":"http://download.dxfdsj.com/scriptedit_2_2_0_20190331.apk","content":"2.2.0 增加调试模式下查看修改开关、变量的值；修复商店bug；修复资源丢失bug","force":"n","md5":"3CDF07EFA8EFC56BF829CF670BA1E45E"}
+{"version":"2.2.1","url":"http://download.dxfdsj.com/scriptedit_2_2_1_20190412apk","content":"2.2.1 无功能增加。修复复制地图主角被复制、播放多个动画卡死、金币判断、公共事件命令跳转无法进入、音效未被打包、快速点击造成事件重复执行等bug","force":"n","md5":"5BDE949E7C971743A3ADC74F46C03CA6"}
