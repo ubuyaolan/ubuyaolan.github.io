@@ -1,1 +1,1 @@
-{"version":"2.2.1","url":"http://download.dxfdsj.com/scriptedit_2_2_1_20190413apk","content":"2.2.1 无功能增加。修复复制地图主角被复制、播放多个动画卡死、金币判断、公共事件命令跳转无法进入、音效未被打包、快速点击造成事件重复执行等bug","force":"n","md5":"D4BE52691329FCA6765A73D09E3233B0"}
+{"version":"2.3.0","url":"http://download.dxfdsj.com/scriptedit_2_3_0_20190426.apk","content":"2.3.0 增加横屏、皮肤、输入数值、中断事件，修复装备无限脱下","force":"n","md5":"C7F87E7E901C4FB3643D860AAA58FFE1"}
