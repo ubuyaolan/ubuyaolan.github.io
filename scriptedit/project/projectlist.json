@@ -1,4 +1,22 @@
 [{
+		"name": "参赛作品",
+		"path": "比赛.jpg",
+		"describe": "第一届RPG剧本编辑参赛作品",
+		"author":"hunao",
+		"url": "https://keefor.github.io/scriptedit"
+	},{
+		"name": "另一个世界的我",
+		"path": "另一个世界的我.png",
+		"describe": "老熟人了，作品也上传到其他平台了，好游快爆？好像是",
+		"author":"刘夜",
+		"url": "https://www.lanzous.com/i5hq0ha"
+	},{
+		"name": "小青蛙历险记",
+		"path": "sample.png",
+		"describe": "两分钟不到结束，后面不会上传游戏太短的app了",
+		"author":"花恋蝶",
+		"url": "https://www.lanzous.com/i5hq0cf"
+	},{
 		"name": "武侠人生",
 		"path": "武侠人生.png",
 		"describe": "内测版，在taptap也可以下载到",
@@ -42,7 +60,7 @@
 		"url": "https://www.lanzous.com/i3panhi"
 	},{
 		"name": "西提的历险",
-		"path": "西提.png",
+		"path": "sample.png",
 		"describe": "这是案例，也是资源包",
 		"author":"古阳",
 		"url": "https://www.lanzous.com/i3m9vdi"
