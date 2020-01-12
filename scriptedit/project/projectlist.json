@@ -1,4 +1,10 @@
 [{
+		"name": "Code AI",
+		"path": "codeai.png",
+		"describe": "这个游戏作者上传到TapTap,感兴趣的可以去那儿关注更新",
+		"author":"刘夜",
+		"url": "https://www.lanzous.com/i8molpa"
+	},{
 		"name": "参赛作品",
 		"path": "比赛.jpg",
 		"describe": "第一届RPG剧本编辑参赛作品",
