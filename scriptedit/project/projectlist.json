@@ -1,7 +1,19 @@
 [{
+		"name": "Code AI 2",
+		"path": "codeai2.png",
+		"describe": "CodeAI续集,科幻风风格浓重",
+		"author":"刘夜",
+		"url": "https://www.lanzous.com/i91wure"
+	},{
+		"name": "教程",
+		"path": "sample.png",
+		"describe": "游戏同时也是教程，为了让新手快速了解，特意做的",
+		"author":"芝秋白",
+		"url": "https://www.lanzous.com/i91wu4b"
+	},{
 		"name": "Code AI",
 		"path": "codeai.png",
-		"describe": "这个游戏作者上传到TapTap,感兴趣的可以去那儿关注更新",
+		"describe": "这个游戏作者上传到TapTap了",
 		"author":"刘夜",
 		"url": "https://www.lanzous.com/i8molpa"
 	},{
