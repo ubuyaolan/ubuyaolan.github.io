@@ -1,8 +1,14 @@
 [{
+		"name": "老八汉堡店",
+		"path": "老八汉堡店.png",
+		"describe": "重口味，谨慎下载",
+		"author":"奇多多",
+		"url": "https://www.lanzous.com/ib0swvc"
+	},{
 		"name": "拇指拳皇",
 		"path": "拇指拳皇.png",
 		"describe": "这是用剧本开的第一个坑，创作时长43个小时。",
-		"author":"文件管理员",
+		"author":"奇多多",
 		"url": "https://www.lanzous.com/iaarwgf"
 	},{
 		"name": "Code AI 2",
