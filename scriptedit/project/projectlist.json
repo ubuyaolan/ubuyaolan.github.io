@@ -1,4 +1,10 @@
 [{
+		"name": "参赛作品",
+		"path": "比赛.jpg",
+		"describe": "第二届RPG剧本编辑参赛作品",
+		"author":"古阳",
+		"url": "https://keefor.github.io/scriptedit2"
+	},{
 		"name": "老八汉堡店",
 		"path": "老八汉堡店.png",
 		"describe": "重口味，谨慎下载",
